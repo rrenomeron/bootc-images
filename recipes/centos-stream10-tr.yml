@@ -1,0 +1,29 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+# image will be published to ghcr.io/<user>/<name>
+name: centos-stream10-tr
+# description will be included in the image's metadata
+description: CentOS Stream 10 with my personal defaults
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: quay.io/centos-bootc/centos-bootc
+image-version: stream10
+# base-image: alma10-base
+# image-version: latest
+
+# module configuration, executed in order
+# you can include multiple instances of the same module
+modules:
+  # Note, once we're pushing images, we can dispense with this
+  - from-file: shared/el10-base.yml
+  - type: files
+    files:
+      - source: system
+        destination: / 
+
+  - from-file: shared/default-flatpaks.yml
+  - from-file: shared/application-rpms.yml
+  - from-file: shared/gnome-ui-fix-packages.yml
+
+  - type: signing # this sets up the proper policy & signing files for signed images to work fully
+

@@ -1,0 +1,20 @@
+modules:
+- type: dnf
+  repos:
+    files:
+      - vscode.repo
+      - google-chrome.repo
+    copr:
+      - ublue-os/staging
+  install:
+    packages:
+      - google-chrome-stable
+      - code
+      - distrobox
+      - just
+      - libvirt
+      - virt-manager
+      - netcat
+      - fastfetch
+  optfix:
+    - google

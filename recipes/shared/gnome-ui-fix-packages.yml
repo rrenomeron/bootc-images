@@ -1,0 +1,17 @@
+modules:
+- type: script
+  scripts:
+    - download-and-install-fonts.sh
+  snippets:
+    - dconf update
+- type: dnf
+  repos:
+    copr:
+      - ublue-os/staging
+  install:
+    packages:
+      - gnome-shell-extension-logo-menu
+      - gnome-tweaks      
+      - gnome-shell-extension-appindicator
+      - gnome-shell-extension-dash-to-dock 
+      - gnome-shell-extension-blur-my-shell
