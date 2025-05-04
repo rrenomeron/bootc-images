@@ -14,6 +14,6 @@ image-version: 10-kitten
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
-  - from-file: shared/el10-base.yml
+  - from-file: base-shared/el10-base.yml
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 

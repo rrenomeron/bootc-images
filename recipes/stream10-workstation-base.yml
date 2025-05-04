@@ -13,5 +13,5 @@ base-image: quay.io/centos-bootc/centos-bootc
 image-version: stream10
 
 modules:
-  - from-file: shared/el10-base.yml
+  - from-file: base-shared/el10-base.yml
   - type: signing
