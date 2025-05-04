@@ -1,8 +1,11 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
-name: alma10-base
+name: almalinux-workstation-base
 # description will be included in the image's metadata
-description: This is AlmaLinux 10 Kitten with the base packages installed
+description: A minimal bootc AlmaLinux Workstation image
+alt-tags:
+  - 10-kitten
+  - latest
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: quay.io/almalinuxorg/almalinux-bootc

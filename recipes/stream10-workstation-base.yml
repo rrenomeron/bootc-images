@@ -2,7 +2,11 @@
 # image will be published to ghcr.io/<user>/<name>
 name: centos-stream-workstation-base
 # description will be included in the image's metadata
-description: This is CentOS 10 Stream with the base packages installed
+description: A minimal bootc CentOS Stream Workstation image
+alt-tags:
+  - "10"
+  - stream10
+  - latest
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: quay.io/centos-bootc/centos-bootc
