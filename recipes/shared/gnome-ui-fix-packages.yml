@@ -3,7 +3,8 @@ modules:
   scripts:
     - download-and-install-fonts.sh
   snippets:
-    - dconf update
+    # Enables our dconf customizations
+    - systemctl enable -f dconf-update.service
 - type: dnf
   repos:
     copr:
