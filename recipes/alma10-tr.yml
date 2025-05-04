@@ -1,21 +1,20 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
-name: alma10-tr
+name: almalinux-bootc-workstation-tr
 # description will be included in the image's metadata
-description: This is my personal OS image.
+description: AlmaLinux 10 Kitten with my personal defaults, in a bootc image
+alt-tags:
+  - "10-kitten"
+  - latest
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: quay.io/almalinuxorg/almalinux-bootc
+base-image: ghcr.io/rrenomeron/almalinux-bootc-workstation-base
 image-version: 10-kitten
-# base-image: alma10-base
-# image-version: latest
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
-  # Note, once we're pushing images, we can dispense with this
-  - from-file: shared/el10-base.yml
   - type: files
     files:
       - source: system
