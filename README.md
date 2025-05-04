@@ -5,7 +5,8 @@ Bluebuild tool.
 
 ## TODO:
 
-- Fix missing icons on Google Chrome 
+- Fix missing icons on Google Chrome (``/bin/xdg-icon-resource: line 1076: unexpected EOF while looking for matching `'` ``)
+- Test applications installed by RPMs to see if they actually work
 - Get a customized Alma 9 image to even work
 - Create installer ISOs using [Titanboa](https://github.com/ublue-os/titanboa) and [Readymade](https://github.com/FyraLabs/readymade)
 - Include Universal Blue "batteries"
