@@ -1,7 +1,7 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
-name: almalinux-workstation-base
+name: almalinux-bootc-workstation-base
 # description will be included in the image's metadata
 description: A minimal bootc AlmaLinux Workstation image
 alt-tags:
