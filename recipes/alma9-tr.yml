@@ -1,0 +1,34 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+# image will be published to ghcr.io/<user>/<name>
+name: almalinux-bootc-workstation-tr
+# description will be included in the image's metadata
+description: AlmaLinux 9 with my personal defaults, in a bootc image
+alt-tags:
+  - "9"
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/rrenomeron/almalinux-bootc-workstation-base
+image-version: 9
+
+# module configuration, executed in order
+# you can include multiple instances of the same module
+modules:
+  - type: files
+    files:
+      - source: system
+        destination: / 
+
+# TODO move this to the base
+  - type: dnf
+    install:
+      packages:
+        - epel-release
+        # - epel-next-release
+
+  - from-file: shared/default-flatpaks.yml
+  - from-file: shared/application-rpms-9.yml
+  # - from-file: shared/gnome-ui-fix-packages.yml
+
+  - type: signing # this sets up the proper policy & signing files for signed images to work fully
+  
