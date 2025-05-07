@@ -32,6 +32,7 @@ jobs:
           # !! Add your recipes here
           - stream10-workstation-base.yml
           - alma10-workstation-base.yml
+          - alma9-workstation-base.yml
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image
