@@ -11,7 +11,6 @@ modules:
       - ublue-os/staging
   install:
     packages:
-      - gnome-shell-extension-logo-menu
       - gnome-tweaks      
       - gnome-shell-extension-appindicator
       - gnome-shell-extension-dash-to-dock 
