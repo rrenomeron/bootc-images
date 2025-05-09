@@ -17,7 +17,9 @@ modules:
   - type: files
     files:
       - source: system
-        destination: / 
+        destination: /
+      - source: system-el9
+        destination: /
 
 # TODO move this to the base
   - type: dnf
@@ -28,7 +30,20 @@ modules:
 
   - from-file: shared/default-flatpaks.yml
   - from-file: shared/application-rpms-9.yml
-  # - from-file: shared/gnome-ui-fix-packages.yml
+  - from-file: shared/ui-fixes.yml
+
+  # This has to be installed in a separate DNF module because
+  # it has to wait for epel-release to be installed.
+  - type: dnf
+    install:
+      packages:
+        - gnome-tweaks
+        - gnome-shell-extension-system-monitor-applet
+        - gnome-shell-extension-appindicator
+
+  - type: gschema-overrides  # this sets up our dconf overrides
+    include:
+      - zz1-tr-el9.gschema.override
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
   
