@@ -11,25 +11,6 @@ alt-tags:
 base-image: quay.io/almalinuxorg/almalinux-bootc
 image-version: 9
 
-# module configuration, executed in order
-# you can include multiple instances of the same module
 modules:
-  - type: script
-    snippets:
-      - "ln -s /usr/bin/dnf /usr/bin/dnf4" # This bit of hackery required for the dnf module to work
-                                           # Alma 9 has DNF 4.x, 4.x is supoosed to work, right?  Right?
-      - "dnf install -y 'dnf-command(config-manager)'"
-      - "dnf config-manager --set-enabled crb"
-  - type: dnf
-    group-install:
-      with-optional: false
-      packages:
-        - Workstation
-        - Console Internet Tools
-        - Container Management
-        - Graphical Administration Tools
-        - Headless Management
-        - Smart Card Support
-        - System Tools
-  - type: signing # this sets up the proper policy & signing files for signed images to work fully
-
+  - from-file: base-shared/el9-base.yml
+  - type: signing
