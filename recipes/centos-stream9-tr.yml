@@ -1,9 +1,9 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
-name: almalinux-bootc-workstation-tr
+name: centos-stream-bootc-workstation-tr
 # description will be included in the image's metadata
-description: AlmaLinux 9 with my personal defaults, in a bootc image
+description: CentOS Stream 9 with my personal defaults, in a bootc image
 alt-tags:
   - "9"
 
@@ -31,7 +31,7 @@ modules:
   - from-file: shared/default-flatpaks.yml
   - from-file: shared/application-rpms-9.yml
   - from-file: shared/ui-fixes.yml
-  - from-file: shared/gnome-ui-9-fixes.yml
+  - from-file: shared/gnome-ui-fixes-9.yml
 
   # This has to be installed in a separate DNF module because
   # it has to wait for epel-release to be installed.
@@ -39,6 +39,7 @@ modules:
     install:
       packages:
         - gnome-tweaks
+        - gnome-shell-extension-system-monitor-applet
         - gnome-shell-extension-appindicator
 
   - type: gschema-overrides  # this sets up our dconf overrides

@@ -3,4 +3,3 @@ cosign.private
 /Containerfile
 /builder-output
 config.toml
-recipes/centos-stream9-tr.yml
