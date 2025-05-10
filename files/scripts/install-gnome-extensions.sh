@@ -33,5 +33,12 @@ function install_extension() {
 }
 set -eou pipefail
 
-install_extension system-monitor-next@paradoxxx.zero.gmail.com 55
-install_extension blur-my-shell@aunetx 29
+. /etc/os-release
+
+if [[ $VERSION_ID == 9* ]]; then
+    install_extension system-monitor-next@paradoxxx.zero.gmail.com 55
+    install_extension blur-my-shell@aunetx 29
+elif [[ $VERSION_ID == 10* ]]; then
+    install_extension system-monitor-next@paradoxxx.zero.gmail.com 80
+fi
+
