@@ -3,8 +3,6 @@
 modules:
   - type: script
     snippets:
-      - "ln -s /usr/bin/dnf /usr/bin/dnf4" # This bit of hackery required for the dnf module to work
-                                           # Alma 9 has DNF 4.x, 4.x is supoosed to work, right?  Right?
       - "dnf install -y 'dnf-command(config-manager)'"
       - "dnf config-manager --set-enabled crb"
   - type: dnf
@@ -18,5 +16,13 @@ modules:
         - Headless Management
         - Smart Card Support
         - System Tools
- 
+    install:
+      packages:
+        - epel-release
+        # - epel-release-next
+    remove:
+      packages:
+        # atd does not work on an atomic image
+        # see https://github.com/fedora-silverblue/issue-tracker/issues/563
+        - at
 

@@ -11,6 +11,11 @@ alt-tags:
 base-image: quay.io/almalinuxorg/almalinux-bootc
 image-version: 9
 
-modules:
+modules:  
+  - type: script
+    snippets:
+      # This bit of hackery required for the dnf module to work
+      # Alma 9 has DNF 4.x, 4.x is supoosed to work, right?  Right?
+      - "if [ ! -a /usr/bin/dnf4 ]; then ln -s /usr/bin/dnf /usr/bin/dnf4; fi" 
   - from-file: base-shared/el9-base.yml
   - type: signing

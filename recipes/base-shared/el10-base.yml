@@ -17,3 +17,8 @@ modules:
     install:
       packages:
         - epel-release
+    remove:
+      packages:
+        # atd does not work on an atomic image
+        # see https://github.com/fedora-silverblue/issue-tracker/issues/563
+        - at
