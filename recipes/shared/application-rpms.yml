@@ -4,17 +4,15 @@ modules:
     files:
       - vscode.repo
       - google-chrome.repo
-    copr:
-      - ublue-os/staging
   install:
     packages:
       - google-chrome-stable
       - code
-      - distrobox
-      - just
       - libvirt
       - virt-manager
-      - netcat
+      - toolbox
+      - distrobox
+      # - just
       - fastfetch
       - cockpit-machines
       - cockpit-networkmanager
@@ -24,10 +22,6 @@ modules:
       - cockpit-selinux
       - cockpit-storaged
       - cockpit-system
+      
   optfix:
     - google
-  remove:
-    packages:
-      # atd does not work on an atomic image
-      # see https://github.com/fedora-silverblue/issue-tracker/issues/563
-      - at

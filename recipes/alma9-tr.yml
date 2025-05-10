@@ -29,9 +29,9 @@ modules:
         # - epel-next-release
 
   - from-file: shared/default-flatpaks.yml
-  - from-file: shared/application-rpms-9.yml
+  - from-file: shared/application-rpms.yml
   - from-file: shared/ui-fixes.yml
-  - from-file: shared/gnome-ui-9-fixes.yml
+  - from-file: shared/ui-fixes-9.yml
 
   # This has to be installed in a separate DNF module because
   # it has to wait for epel-release to be installed.

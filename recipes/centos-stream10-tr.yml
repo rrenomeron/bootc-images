@@ -23,7 +23,8 @@ modules:
 
   - from-file: shared/default-flatpaks.yml
   - from-file: shared/application-rpms.yml
-  - from-file: shared/gnome-ui-fix-packages.yml
+  - from-file: shared/application-rpms-10.yml
+  - from-file: shared/ui-fixes-10.yml
   - from-file: shared/ui-fixes.yml
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
