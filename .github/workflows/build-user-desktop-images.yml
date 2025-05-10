@@ -27,6 +27,8 @@ jobs:
         recipe:
           - alma10-tr.yml
           - centos-stream10-tr.yml
+          - alma9-tr.yml
+          - centos-stream9-tr.yml
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image
