@@ -4,7 +4,8 @@ modules:
     system:
       install:
         - com.discordapp.Discord        
-        - org.gimp.GIMP 
+        - org.gimp.GIMP
+        - org.darktable.Darktable 
         - org.libreoffice.LibreOffice        
         - com.nextcloud.desktopclient.nextcloud
         - com.spotify.Client 
