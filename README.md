@@ -9,3 +9,4 @@ Bluebuild tool.
 - Test applications installed by RPMs to see if they actually work
 - Create installer ISOs using [Titanboa](https://github.com/ublue-os/titanboa) and [Readymade](https://github.com/FyraLabs/readymade)
 - Include Universal Blue "batteries"
+- Figure out auditd service fails on alma9
