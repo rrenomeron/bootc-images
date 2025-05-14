@@ -39,7 +39,7 @@ if [[ $VERSION_ID == 9* ]]; then
     install_extension system-monitor-next@paradoxxx.zero.gmail.com 55
     install_extension blur-my-shell@aunetx 29
     install_extension desk-changer@eric.gach.gmail.com 25
-    install_extension dash-to-dock@micagx.gmail.com 84
+    install_extension dash-to-dock@micxgx.gmail.com 84
 
 elif [[ $VERSION_ID == 10* ]]; then
     install_extension system-monitor-next@paradoxxx.zero.gmail.com 80
