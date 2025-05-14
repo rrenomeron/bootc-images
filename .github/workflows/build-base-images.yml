@@ -7,8 +7,8 @@ on:
   push:
     paths-ignore: # don't rebuild if only documentation has changed
       - "**.md"
-      - "shared/*.yml"
-      - "*-tr.yml"
+      - "recipes/shared/*.yml"
+      - "recipes/*-tr.yml"
 
 
   pull_request:
