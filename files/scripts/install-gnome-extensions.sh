@@ -16,11 +16,11 @@ function install_extension() {
     EXTENSION_ID=$1
     EXTENSION_VERSION=$2
 
-
-    # EXTENSION_VERSION=15
-    # EXTENSION_ID=accent-directories@taiwbi.com
+    echo "Downloading $EXTENSION_ID Version $EXTENSION_VERSION"
     EXTENSION_URL_NAME=${EXTENSION_ID//@}
-    curl -L https://extensions.gnome.org/extension-data/$EXTENSION_URL_NAME.v$EXTENSION_VERSION.shell-extension.zip \
+    DOWNLOAD_URL=https://extensions.gnome.org/extension-data/$EXTENSION_URL_NAME.v$EXTENSION_VERSION.shell-extension.zip
+    echo "Downloading from $DOWNLOAD_URL"
+    curl -L  $DOWNLOAD_URL \
         > /tmp/extension.zip
 
     EXTENSION_DIR=/usr/share/gnome-shell/extensions/$EXTENSION_ID
