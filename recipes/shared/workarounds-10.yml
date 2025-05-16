@@ -3,10 +3,9 @@
 # We have to do this because patch is not installed yet
 modules:
   - type: dnf 
-    packages:
-      install:
-        -patch
-
+    install:
+      packages:
+        - patch
   - type: script
     scripts:
       - patch-xdg-icon-resource.sh

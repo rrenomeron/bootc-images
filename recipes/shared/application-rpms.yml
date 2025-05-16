@@ -22,7 +22,6 @@ modules:
       - cockpit-selinux
       - cockpit-storaged
       - cockpit-system
-      - patch
       
   optfix:
     - google
