@@ -1,0 +1,5 @@
+# In an ideal world, this file would be empty
+modules:
+  - type: script
+    scripts:
+      - patch-xdg-icon-resource.sh
