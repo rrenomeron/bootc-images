@@ -1,0 +1,32 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+# image will be published to ghcr.io/<user>/<name>
+name: bluefin-lts-tr
+# description will be included in the image's metadata
+description: Bluefin LTS with my personal defaults, in a bootc image
+# alt-tags:
+#   - "10"
+#   - stream10
+#   - latest
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/ublue-os/bluefin
+image-version: lts
+
+# module configuration, executed in order
+# you can include multiple instances of the same module
+modules:
+  - type: files
+    files:
+      - source: system
+        destination: / 
+
+  - from-file: shared/default-flatpaks.yml
+  - from-file: shared/application-rpms.yml
+  - from-file: shared/application-rpms-10.yml
+  - from-file: shared/ui-fixes-10.yml
+  - from-file: shared/ui-fixes.yml
+  - from-file: shared/workarounds.yml
+
+  - type: signing # this sets up the proper policy & signing files for signed images to work fully
+
