@@ -1,5 +1,12 @@
 # In an ideal world, this file would be empty
+
+# We have to do this because patch is not installed yet
 modules:
+  - type: dnf 
+    packages:
+      install:
+        -patch
+
   - type: script
     scripts:
       - patch-xdg-icon-resource.sh
