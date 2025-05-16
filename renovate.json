@@ -2,5 +2,15 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
+  ],    
+
+  "rebaseWhen": "never",
+
+  "packageRules": [
+    {
+      "automerge": false,
+      "matchUpdateTypes": ["digest"],
+      "matchDepNames": ["quay.io/centos-bootc/centos-bootc"]
+    }
   ]
 }
