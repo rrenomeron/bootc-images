@@ -19,7 +19,6 @@ modules:
     install:
       packages:
         - epel-release
-        - patch
         # - epel-release-next
     remove:
       packages:

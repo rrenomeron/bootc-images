@@ -17,7 +17,6 @@ modules:
     install:
       packages:
         - epel-release
-        - patch
     remove:
       packages:
         # atd does not work on an atomic image
