@@ -1,4 +1,5 @@
-# In an ideal world, this file would be empty
+# yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json#
+ #In an ideal world, this file would be empty
 
 # We have to do this because patch is not installed yet
 modules:

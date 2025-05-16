@@ -1,5 +1,4 @@
-# module configuration, executed in order
-# you can include multiple instances of the same module
+# yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
 modules:
   - type: script
     snippets:
