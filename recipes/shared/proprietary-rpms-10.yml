@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
+
+# This is a hack to allow for install of VSCode and Chrome while still checking the 
+# GPG signatures on the packages.  Apparently both Microsoft and Google are using
+# outdated crypto to sign packages, and their algorithms are no longer allowed by
+# default in EL 10.  So we allow it *temporarily* so we can get the packages installed.
+# It's giving up some security, but it's better than not checking the signatures at all.
+#
+# Note that should be done as the last DNF module instance, just to make sure that the
+# other RPMs are validated with the best crypto (and also EPEL doesn't work with legacy
+# algorithms).
+#
+# See https://discussion.fedoraproject.org/t/rejected-third-party-repository-keys/144806/6
+# for details.
+
+modules:
+- type: script
+  snippets:
+    - "update-crypto-policies --set LEGACY"
+    - "update-crypto-policies --show"
+- type: dnf
+  repos:
+    files:
+      - vscode.repo
+      - google-chrome.repo
+  install:
+    packages:
+      - google-chrome-stable
+      - code
+     
+  optfix:
+    - google
+
+- type: script
+  snippets:
+    - "update-crypto-policies --set DEFAULT"
+    - "update-crypto-policies --show"

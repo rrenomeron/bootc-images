@@ -1,14 +1,14 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
 modules:
 - type: dnf
-  repos:
-    files:
-      - vscode.repo
-      - google-chrome.repo
+  # repos:
+  #   files:
+  #     - vscode.repo
+  #     - google-chrome.repo
   install:
     packages:
-      - google-chrome-stable
-      - code
+      # - google-chrome-stable
+      # - code
       - libvirt
       - virt-manager
       - toolbox
@@ -24,5 +24,10 @@ modules:
       - cockpit-storaged
       - cockpit-system
       
-  optfix:
-    - google
+#   optfix:
+#     - google
+
+# - type: script
+#   snippets:
+#     - "update-crypto-policies --set DEFAULT"
+#     - "update-crypto-policies --show"
