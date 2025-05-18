@@ -2,7 +2,6 @@
 modules:
 - type: script
   scripts:
-    - download-and-install-fonts.sh
     - install-gnome-extensions.sh
   snippets:
     # Enables our dconf customizations
