@@ -1,9 +1,9 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
 
-# This is a hack to allow for install of VSCode and Chrome while still checking the 
-# GPG signatures on the packages.  Apparently both Microsoft and Google are using
+# This is a hack to allow for install of VSCode while still checking the 
+# GPG signatures on the packages.  Apparently both Microsoft is using
 # outdated crypto to sign packages, and their algorithms are no longer allowed by
-# default in EL 10.  So we allow it *temporarily* so we can get the packages installed.
+# default in EL 10.  So we allow it *temporarily* so we can get the package installed.
 # It's giving up some security, but it's better than not checking the signatures at all.
 #
 # Note that should be done as the last DNF module instance, just to make sure that the
@@ -22,14 +22,9 @@ modules:
   repos:
     files:
       - vscode.repo
-      - google-chrome.repo
   install:
     packages:
-      - google-chrome-stable
       - code
-     
-  optfix:
-    - google
 
 - type: script
   snippets:

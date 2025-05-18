@@ -3,3 +3,14 @@ modules:
   - type: script
     scripts:
       - install-gnome-extensions.sh
+  # This has to be installed in a separate DNF module because
+  # it has to wait for epel-release to be installed.
+  - type: dnf
+    install:
+      packages:
+        - gnome-tweaks
+        - gnome-shell-extension-appindicator
+
+  - type: gschema-overrides  # this sets up our dconf overrides
+    include:
+      - zz1-tr-el9.gschema.override      
