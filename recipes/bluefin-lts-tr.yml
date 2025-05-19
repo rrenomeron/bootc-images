@@ -3,14 +3,14 @@
 # image will be published to ghcr.io/<user>/<name>
 name: bluefin-lts-tr
 # description will be included in the image's metadata
-description: Bluefin LTS with my personal defaults, in a bootc image
+description: Bluefin-DX LTS with my personal defaults, in a bootc image
 # alt-tags:
 #   - "10"
 #   - stream10
 #   - latest
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/bluefin
+base-image: ghcr.io/ublue-os/bluefin-dx
 image-version: lts
 
 # module configuration, executed in order
