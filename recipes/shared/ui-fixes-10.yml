@@ -1,11 +1,8 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
 modules:
-- type: script
-  scripts:
-    - install-gnome-extensions.sh
-  snippets:
-    # Enables our dconf customizations
-    - systemctl enable -f dconf-update.service
+- type: gnome-extensions
+  install:
+    - system-monitor-next
 - type: dnf
   repos:
     copr:
