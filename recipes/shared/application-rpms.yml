@@ -3,17 +3,14 @@ modules:
 - type: dnf
   repos:
     files:
-  #     - vscode.repo
       - google-chrome.repo
   install:
     packages:
       - google-chrome-stable
-      # - code
       - libvirt
       - virt-manager
       - toolbox
       - distrobox
-      # - just
       - fastfetch
       - cockpit-machines
       - cockpit-networkmanager
@@ -26,8 +23,3 @@ modules:
       
   optfix:
     - google
-
-# - type: script
-#   snippets:
-#     - "update-crypto-policies --set DEFAULT"
-#     - "update-crypto-policies --show"
