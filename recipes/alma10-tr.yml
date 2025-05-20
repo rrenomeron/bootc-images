@@ -25,6 +25,7 @@ modules:
   - from-file: shared/default-flatpaks.yml
   - from-file: shared/application-rpms.yml
   - from-file: shared/application-rpms-10.yml
+  - from-file: shared/docker.yml
   - from-file: shared/ui-fixes-10.yml
   - from-file: shared/ui-fixes.yml
   - from-file: shared/vscode.yml

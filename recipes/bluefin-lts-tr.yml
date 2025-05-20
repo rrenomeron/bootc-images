@@ -29,5 +29,10 @@ modules:
   - from-file: shared/ui-fixes-10.yml
   - from-file: shared/ui-fixes.yml
 
+  # Disable rootful docker
+  - type: script
+    snippets:
+      - "systemctl disable docker.service docker.socket"
+
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
