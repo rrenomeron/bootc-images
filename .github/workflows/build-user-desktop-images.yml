@@ -2,7 +2,7 @@ name: User Desktop Image Builds
 on:
   schedule:
     - cron:
-        "00 10 * * 0" # build at 10 AM on Sundays        
+        "00 9 * * TUE" # build at 9 AM UTC on Tuesdays        
   push:
     paths-ignore: # don't rebuild if only documentation has changed
       - "**.md"

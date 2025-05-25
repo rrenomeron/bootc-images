@@ -2,7 +2,7 @@ name: Base Image Weekly Builds
 on:
   schedule:
     - cron:
-        "00 09 * * 0" # build at 09:00 UTC Sunday morning
+        "00 07 * * TUE" # build at 09:00 UTC Tuesday morning
         
   push:
     paths-ignore: # don't rebuild if only documentation has changed
