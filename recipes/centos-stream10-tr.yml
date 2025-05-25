@@ -30,6 +30,17 @@ modules:
   - from-file: shared/ui-fixes-10.yml
   - from-file: shared/ui-fixes.yml
   - from-file: shared/vscode.yml
+  # Stream 10 does not brand the Workspaces menu, so 
+  # the logo menu from Bluefin make a little more sense.
+  # Soon there will be a CentOS icon; when it lands the
+  # branding will even be appropriate!
+  - type: dnf
+    repos:
+      copr:
+        - ublue-os/staging
+    install: 
+      packages:
+        - gnome-shell-extension-logo-menu
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 

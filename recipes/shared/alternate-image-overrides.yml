@@ -6,7 +6,7 @@ modules:
         - org.libreoffice.LibreOffice
         - org.sqlitebrowser.sqlitebrowser
         - io.dbeaver.DBeaverCommunity
-        - org.gnome.Totem
+        - com.github.rafostar.Clapper
         - org.gnome.Snapshot
         - us.zoom.Zoom
         - ca.desrt.dconf-editor
