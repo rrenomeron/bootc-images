@@ -50,11 +50,12 @@ A work in progress.  Some options:
 ## TODO:
 
 - Test applications installed by RPMs to see if they actually work
-- Fully [refactor recipes in terms of "features"](https://github.com/rrenomeron/ublue-tr/commit/59c87c711777aa29a8939d88ebd4320b4e6998bc)
+- Fully [refactor recipes in terms of
+  "features"](https://github.com/rrenomeron/ublue-tr/commit/59c87c711777aa29a8939d88ebd4320b4e6998bc)
+- Revist EL 10 base workstation image construction to make it more like Bluefin LTS
 - Create installer ISOs using [Titanboa](https://github.com/ublue-os/titanboa) and
   [Readymade](https://github.com/FyraLabs/readymade)
 - Figure out how to support different sets of default flatpaks on the same image
   for different desktop use cases (e.g. home, work, digitial artist, writer)
 - Headless server use cases
-- Include Universal Blue "batteries"
 - Figure out auditd service fails on EL 9

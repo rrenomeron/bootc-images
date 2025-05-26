@@ -22,6 +22,7 @@ modules:
 
   - from-file: shared/workarounds.yml
   - from-file: shared/workarounds-10.yml
+  - from-file: shared/ublue-batteries.yml
   - from-file: shared/default-flatpaks.yml
   - from-file: shared/application-rpms.yml
   - from-file: shared/application-rpms-10.yml
