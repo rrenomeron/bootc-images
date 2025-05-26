@@ -6,3 +6,6 @@ modules:
   snippets:
     # Enables our dconf customizations
     - systemctl enable -f dconf-update.service
+- type: gnome-extensions
+  install:
+    - system-monitor-next

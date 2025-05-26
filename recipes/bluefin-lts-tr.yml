@@ -26,7 +26,6 @@ modules:
   - from-file: shared/default-flatpaks.yml
   - from-file: shared/application-rpms.yml
   - from-file: shared/application-rpms-10.yml
-  - from-file: shared/ui-fixes-10.yml
   - from-file: shared/ui-fixes.yml
 
   # Disable rootful docker
