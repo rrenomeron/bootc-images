@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
 
 # All the Universal Blue goodies (except for brew and rebase-helper)
-# This is only used for EL 10, since they don't build their stuff on EL 9
+# This is only used for EL 10, since Universal Blue doesn't build their stuff on EL 9
 modules:
 - type: dnf
   repos:

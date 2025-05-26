@@ -25,8 +25,9 @@ modules:
   - from-file: shared/workarounds-10.yml
   - from-file: shared/ublue-batteries.yml
   - from-file: shared/default-flatpaks.yml
-  - from-file: shared/application-rpms.yml
-  - from-file: shared/application-rpms-10.yml
+  - from-file: shared/chrome.yml
+  - from-file: shared/virtualization.yml
+  - from-file: shared/toolbox-runtimes.yml
   - from-file: shared/docker.yml
   - from-file: shared/ui-fixes-10.yml
   - from-file: shared/ui-fixes.yml
