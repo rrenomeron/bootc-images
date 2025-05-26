@@ -9,5 +9,6 @@ modules:
         - libvirt
         - virt-manager
         - ublue-os-libvirt-workarounds
+        - cockpit-machines
  
 

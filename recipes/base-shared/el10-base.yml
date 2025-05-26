@@ -5,21 +5,238 @@ modules:
       - "dnf install -y 'dnf-command(config-manager)'"
       - "dnf config-manager --set-enabled crb"
   - type: dnf
-    group-install:
-      with-optional: false
-      packages:
-        - Workstation
-        - Console Internet Tools
-        - Container Management
-        - Graphical Administration Tools
-        - Headless Management
-        - Smart Card Support
-        - System Tools
     install:
       packages:
         - epel-release
-    remove:
+
+  # Break the "Workstation" Group into smaller layers
+  # - type: dnf
+  #   group-install:
+  #     with-optional: false
+  #     packages:
+  #       - Workstation product core 
+
+  # Workstation product core group excluding pkgs on the bootc base image
+  # Or in other groups that we'll install later
+  # This layer is currently 700+ MB, needs some more breakdown
+  - type: dnf
+    install:
       packages:
-        # atd does not work on an atomic image
-        # see https://github.com/fedora-silverblue/issue-tracker/issues/563
-        - at
+        - alsa-sof-firmware
+        - bc
+        - cifs-utils
+        - crontabs
+        - cyrus-sasl-plain
+        - dnf-plugins-core
+        - dos2unix
+        - git
+        - hunspell
+        - lrzsz
+        - mailcap
+        - man-pages
+        - mcelog
+        - mdadm
+        - mtr
+        - nmap-ncat
+        - pinentry-gnome3
+        - plocate
+        - plymouth
+        - psacct
+        - qt6-qtbase
+        - qt6-qtbase-gui
+        - qt6-qtdeclarative
+        - quota
+        - realmd
+        - redhat-release
+        - redhat-release-eula
+        - rsync
+        - setroubleshoot
+        - sos
+        - sssd
+        - symlinks
+        - telnet
+        - thermald
+        - time
+        - traceroute
+        - tree
+        - unzip
+        - usbutils
+        - words
+        - zip
+        - bash-color-prompt
+
+  # The langpacks are big enough to get their own layer
+  - type: dnf
+    install:
+      packages:
+        - glibc-all-langpacks
+
+  - type: dnf
+    group-install:
+      with-optional: false
+      packages:
+        - Common NetworkManager submodules
+  - type: dnf
+    group-install:
+      with-optional: false
+      packages:
+        - Fonts 
+
+  # TODO: This layer is nearly 1 GB; need to break it up
+  - type: dnf
+    group-install:
+      with-optional: false
+      packages:
+        - GNOME 
+    remove:
+      auto-remove: true
+      packages:
+      # We will install these by flatpak
+      - baobab
+      - gnome-calculator
+      - gnome-characters
+      - gnome-clocks
+      - gnome-disk-utility
+      - gnome-font-viewer
+      - gnome-text-editor
+      - papers
+
+  - type: dnf
+    group-install:
+      with-optional: false
+      packages:
+        - Guest Desktop Agents 
+  - type: dnf
+    group-install:
+      with-optional: false
+      packages:
+        - Hardware Support 
+  - type: dnf
+    group-install:
+      with-optional: false
+      packages:
+        - Internet Browser 
+  - type: dnf
+    group-install:
+      with-optional: false
+      packages:
+        - Printing client
+  - type: dnf
+    group-install:
+      with-optional: false
+      packages:
+        - Standard
+    remove:
+      auto-remove: true
+      packages:
+      # The cockpit package pulls in a bunch of stuff we don't need
+      # We'll do a more nuanced cockpit install later
+      - cockpit-*
+      # atd does not work on an atomic image
+      # see https://github.com/fedora-silverblue/issue-tracker/issues/563
+      - at
+
+  - type: dnf
+    group-install:
+      with-optional: false
+      packages:
+        - Console Internet Tools
+  - type: dnf
+    group-install:
+      with-optional: false
+      packages:
+        - Container Management
+  - type: dnf
+    group-install:
+      with-optional: true
+      packages:
+        - Graphical Administration Tools
+        # Smart Card Support is on the base image
+        # - Smart Card Support
+  - type: dnf
+    group-install:
+      with-optional: false
+      packages:
+        - System Tools
+
+  # The ibus packages bring in a phenomenal number of deps
+  # We put them last in the hopes that some of the deps are
+  # installed in other layers
+  - type: dnf
+    install:
+      packages:
+      - ibus-anthy
+      - ibus-gtk3
+      - ibus-hangul
+      - ibus-libpinyin
+      - ibus-libzhuyin
+      - ibus-m17n
+      - ibus-typing-booster
+  
+        
+
+  # Omissions from the group install
+  - type: dnf
+    install:
+      packages:
+        - just
+        - netcat
+        - openssh-server
+        # Why isn't patch in one of the other groups?
+        # The world may never know
+        - patch
+
+  # Our nuanced list of cockpit packages
+  # Notable omissions:
+  #   - cockpit-ws: We use the cockpit destkop client
+  #   - cockpit-PackageKit: we're an image-mode system
+  - type: dnf
+    install:
+      packages:
+      - cockpit-networkmanager
+      - cockpit-ostree
+      - cockpit-bridge
+      - cockpit-podman
+      - cockpit-selinux
+      - cockpit-storaged
+      - cockpit-system
+
+  # The "batteries included" with Univeral Blue
+  - type: dnf
+    repos:
+      copr:
+        - ublue-os/staging
+        - ublue-os/packages
+      files:
+        - https://negativo17.org/repos/epel-multimedia.repo
+    install:
+      install-weak-deps: false
+      packages:
+      - ublue-os-just
+      - ublue-os-luks
+      - ublue-os-signing
+      - ublue-os-udev-rules
+      - ublue-os-update-services
+      - ublue-motd
+      - ublue-fastfetch
+      - ublue-setup-services
+      - ublue-polkit-rules
+      - uupd
+  - type: dnf
+    repos:
+      files:
+        - https://negativo17.org/repos/epel-multimedia.repo
+    group-install:
+      packages:
+        - multimedia
+      with-optional: false
+      install-weak-deps: false
+    install:
+      install-weak-deps: false   
+      packages: 
+      - ffmpeg 
+      - libavcodec  
+      - lame
+      - lame-libs
+      - libjxl 
+      - ffmpegthumbnailer
