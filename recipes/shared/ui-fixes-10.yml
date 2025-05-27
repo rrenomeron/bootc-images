@@ -10,3 +10,10 @@ modules:
       - gnome-shell-extension-appindicator
       - gnome-shell-extension-dash-to-dock 
       - gnome-shell-extension-blur-my-shell
+- type: gnome-extensions
+  install:
+    - Accent Icons
+    - Weather or Not      
+- type: gschema-overrides  # this sets up our dconf overrides
+  include:
+    - zz1-tr-el10.gschema.override           
