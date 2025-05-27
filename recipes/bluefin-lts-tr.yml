@@ -32,5 +32,19 @@ modules:
     snippets:
       - "systemctl disable docker.service docker.socket"
 
+  # These Bluefin standard things appear to be missing from the LTS image
+  - type: dnf
+    install:
+      packages:
+        - virt-manager
+        - cockpit-machines
+        - cockpit-networkmanager
+        - cockpit-ostree
+        - cockpit-bridge
+        - cockpit-podman
+        - cockpit-selinux
+        - cockpit-storaged
+        - cockpit-system
+
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
