@@ -46,13 +46,18 @@ A work in progress.  Some options:
   which is what Podman desktop does behind the scenes anyway (see ``build-vm-disk.sh`` for some
   marginally workable ideas)
 - Try methods in the [Fedora/CentOS ``bootc`` documentation](https://docs.fedoraproject.org/en-US/bootc/bare-metal/)
+- For Bluefin LTS, install using 
+[their installer](https://docs.projectbluefin.io/downloads), 
+(make sure you choose LTS!) then use
+``bootc switch ghcr.io/rrenomeron/bluefin-lts:latest --enforce-container-sigpolicy``
 
 ## TODO:
 
 - Test applications installed by RPMs to see if they actually work
 - Fully [refactor recipes in terms of
   "features"](https://github.com/rrenomeron/ublue-tr/commit/59c87c711777aa29a8939d88ebd4320b4e6998bc)
-- Revist EL 10 base workstation image construction to make it more like Bluefin LTS
+- Review EL 10 workstation base image layer efficiency after a few updates
+- Add workstation base image version in ``/etc/os-release``
 - Create installer ISOs using [Titanboa](https://github.com/ublue-os/titanboa) and
   [Readymade](https://github.com/FyraLabs/readymade)
 - Figure out how to support different sets of default flatpaks on the same image
