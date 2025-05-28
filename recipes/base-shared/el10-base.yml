@@ -102,6 +102,8 @@ modules:
       - papers
       - snapshot
       - loupe
+      - PackageKit 
+      - PackageKit-command-not-found
 
   - type: dnf
     group-install:
