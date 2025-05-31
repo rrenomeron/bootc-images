@@ -4,12 +4,13 @@ name: almalinux-bootc-workstation-base
 # description will be included in the image's metadata
 description: A minimal bootc AlmaLinux Workstation image
 alt-tags:
-  - 10-kitten
+  - "10"
+  - "10.0"
   - latest
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: quay.io/almalinuxorg/almalinux-bootc
-image-version: 10-kitten
+image-version: 10
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
