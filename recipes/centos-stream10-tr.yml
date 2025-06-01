@@ -20,6 +20,8 @@ modules:
     files:
       - source: system
         destination: / 
+      - source: system-stream10
+        destination: /
 
   - from-file: shared/workarounds.yml
   - from-file: shared/workarounds-10.yml
@@ -33,8 +35,6 @@ modules:
   - from-file: shared/vscode.yml
   # Stream 10 does not brand the Workspaces menu, so 
   # the logo menu from Bluefin make a little more sense.
-  # Soon there will be a CentOS icon; when it lands the
-  # branding will even be appropriate!
   - type: dnf
     repos:
       copr:
@@ -47,7 +47,7 @@ modules:
   # CentOS Stream doesn't have this issue, so we add the logo menu.
   - type: script
     scripts:
-      - enable-logo-menu.sh        
+      - enable-logo-menu.sh
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
