@@ -226,6 +226,14 @@ modules:
       - ublue-setup-services
       - ublue-polkit-rules
       - uupd
+
+  # The ublue-os-signing RPM places files in /usr/etc (which is now forbidden)
+  # at install time, and then the file is moved during container build time
+  # for the uBlue main image.  We replicate that here.
+  - type: script
+    snippets:
+    - "mv /usr/etc/containers/policy.json /etc/containers/policy.json"
+
   - type: dnf
     repos:
       files:
