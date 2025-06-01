@@ -14,4 +14,11 @@ image-version: stream10
 
 modules:
   - from-file: base-shared/el10-base.yml
+  # This does not exist in EPEL 10.0, which Alma uses
+  # So we add it explicitly here.  Should remove when
+  # Alma hits 10.1po
+  - type: dnf
+    install:
+      packages:
+      - ffmpegthumbnailer
   - type: signing
