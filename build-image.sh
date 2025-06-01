@@ -4,7 +4,7 @@
 # I'm sick of all the typing!
 
 if [ $(command -v bluebuild) ]; then
-    bluebuild build --build-driver=podman $1
+    bluebuild build --build-driver=podman --run-driver=podman --inspect-driver=skopeo $1
 else 
     echo "Bluebuild not installed, can't build!"
     exit 1
