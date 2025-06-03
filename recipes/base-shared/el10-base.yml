@@ -115,11 +115,11 @@ modules:
       with-optional: false
       packages:
         - Hardware Support 
-  - type: dnf
-    group-install:
-      with-optional: false
-      packages:
-        - Internet Browser 
+  # - type: dnf
+  #   group-install:
+  #     with-optional: false
+  #     packages:
+  #       - Internet Browser 
   - type: dnf
     group-install:
       with-optional: false

@@ -18,14 +18,15 @@ While EL itself is stable, these images are still under development. Be on the l
 - GNOME UI Fixes inspired by [Bluefin](https://projectbluefin.io)
     - Maximize/Minimize buttons enabled
     - Dash To Dock, App Indicators, Blur My Shell, GNOME Tweaks installed on image
+    - Logo Menu on CentOS Stream 10
     - Clocks set to AM/PM with weekday display
     - Nautilus: single click to open, smaller icons, full delete and symlink creation enabled
-    - Intel One Mono as default monospace font, Cascadia Code available
+    - [Intel One Mono](https://www.intel.com/content/www/us/en/company-overview/one-monospace-font.html) as default monospace font, [Cascadia Code](https://learn.microsoft.com/en-us/windows/terminal/cascadia-code) available
 
 ## Supported Distributions
 
 - AlmaLinux 9.6
-- AlmaLinux Kitten 10 (will switch to AlmaLinux 10.x when released)
+- AlmaLinux 10.0
 - CentOS Stream 9
 - CentOS Stream 10
 - [Bluefin LTS](https://docs.projectbluefin.io/lts/)
