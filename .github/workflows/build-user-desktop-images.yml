@@ -30,6 +30,7 @@ jobs:
           - alma9-tr.yml
           - centos-stream9-tr.yml
           - bluefin-lts-tr.yml
+          - bluefin-lts-tr-testing.yml
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image

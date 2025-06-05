@@ -1,0 +1,57 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+# image will be published to ghcr.io/<user>/<name>
+name: bluefin-lts-tr
+# description will be included in the image's metadata
+description: Bluefin-DX LTS with my personal defaults, in a bootc image
+alt-tags:
+    - testing
+#   - "10"
+#   - stream10
+#   - latest
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/ublue-os/bluefin-dx
+image-version: lts-testing
+
+# module configuration, executed in order
+# you can include multiple instances of the same module
+modules:
+  - type: files
+    files:
+      - source: system
+        destination: / 
+
+  - from-file: shared/workarounds.yml
+  - from-file: shared/workarounds-10.yml
+  - from-file: shared/default-flatpaks.yml
+  - from-file: shared/chrome.yml
+  - from-file: shared/ui-fixes.yml
+
+  # Disable rootful docker
+  - type: script
+    snippets:
+      - "systemctl disable docker.service docker.socket"
+
+  # These Bluefin standard things appear to be missing from the LTS image
+  - type: dnf
+    install:
+      packages:
+        - virt-manager
+        - cockpit-machines
+        - cockpit-networkmanager
+        - cockpit-ostree
+        - cockpit-bridge
+        - cockpit-podman
+        - cockpit-selinux
+        - cockpit-storaged
+        - cockpit-system
+  # By default, we do not enable the logo menu on EL, since the Workspaces menu often
+  # is branded, and it looks silly to have two logos right next to each other.
+  # Bluefin doesn't have this issue, so we keep it.
+  - type: script
+    scripts:
+      - enable-logo-menu.sh
+      
+  - type: signing # this sets up the proper policy & signing files for signed images to work fully
+
