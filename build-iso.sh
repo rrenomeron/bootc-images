@@ -25,10 +25,9 @@ sudo podman run --rm --tty --privileged --security-opt label=type:unconfined_t \
     --label bootc.image-builder=true \
     quay.io/centos-bootc/bootc-image-builder:latest \
     $BOOTC_IMAGE \
-    --output /output --local \
+    --output /output \
     --progress term \
-    --type qcow2 \
+    --type anaconda-iso \
     --target-arch amd64 \
     --rootfs xfs \
     --chown $UID:$UID
-# Extend the target disk size

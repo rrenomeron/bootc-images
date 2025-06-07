@@ -41,16 +41,11 @@ shows that doing a ``bootc swtich`` to an EL 10 image "just works". (!)
 
 A work in progress.  Some options:
 
-- Use Podman Desktop to create an (non-interactive) Anaconda disk
-- Use
-  [``bootc-image-builder``](https://github.com/osbuild/bootc-image-builder/blob/main/README.md)
-  which is what Podman desktop does behind the scenes anyway (see ``build-vm-disk.sh`` for some
-  marginally workable ideas)
+- Use ``build-iso.sh`` script in this directory, which calls
+  [``bootc-image-builder``](https://osbuild.org/docs/bootc/) in  an opinionated way (will
+  reformat the first disk it sees and install the OS)
+- Use Podman Desktop, which allows you to call ``bootc-image-builder`` with different options
 - Try methods in the [Fedora/CentOS ``bootc`` documentation](https://docs.fedoraproject.org/en-US/bootc/bare-metal/)
-- For Bluefin LTS, install using 
-[their installer](https://docs.projectbluefin.io/downloads), 
-(make sure you choose LTS!) then use
-``bootc switch ghcr.io/rrenomeron/bluefin-lts:latest --enforce-container-sigpolicy``
 
 ## TODO:
 
