@@ -4,6 +4,7 @@ modules:
   repos:
     copr:
       - ublue-os/staging
+      - ublue-os/packages
   install:
     packages:
       - gnome-tweaks      
@@ -12,6 +13,7 @@ modules:
       - gnome-shell-extension-blur-my-shell
       - desktop-backgrounds-basic
       - desktop-backgrounds-waves
+      - bluefin-backgrounds
 - type: gnome-extensions
   install:
     - Accent Icons
