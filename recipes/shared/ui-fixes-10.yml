@@ -10,6 +10,8 @@ modules:
       - gnome-shell-extension-appindicator
       - gnome-shell-extension-dash-to-dock 
       - gnome-shell-extension-blur-my-shell
+      - desktop-backgrounds-basic
+      - desktop-backgrounds-waves
 - type: gnome-extensions
   install:
     - Accent Icons
