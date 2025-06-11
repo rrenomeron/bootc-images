@@ -221,8 +221,7 @@ modules:
       - ublue-os-signing
       - ublue-os-udev-rules
       - ublue-os-update-services
-      - ublue-motd
-      - ublue-fastfetch
+      - ublue-motd      
       - ublue-setup-services
       - ublue-polkit-rules
       - uupd
