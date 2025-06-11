@@ -20,4 +20,5 @@ modules:
       packages:
         - epel-release
         - firewalld
+        - git
         - cloud-init
