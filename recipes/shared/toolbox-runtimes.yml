@@ -9,3 +9,7 @@ modules:
       
   optfix:
     - google
+
+- type: script
+  scripts:
+    - set-trust-for-redhat-container-registry.sh
