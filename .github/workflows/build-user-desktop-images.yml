@@ -6,6 +6,12 @@ on:
   push:
     paths-ignore: # don't rebuild if only documentation has changed
       - "**.md"
+      - recipes/base-shared/* # Don't build if the base images recipe files changed
+      - recipes/*-base.yml
+      
+  workflow_run:
+    workflows: [Base Image Weekly Builds]
+    types: [completed]
 
   pull_request:
   workflow_dispatch: # allow manually triggering builds

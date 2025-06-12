@@ -7,7 +7,8 @@ on:
   push:
     paths-ignore: # don't rebuild if only documentation has changed
       - "**.md"
-      - "recipes/shared/*.yml"
+      - files/**
+      - "recipes/shared/*.yml" # don't build if the user images change
       - "recipes/*-tr.yml"
 
 

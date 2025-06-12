@@ -250,3 +250,4 @@ modules:
       - lame
       - lame-libs
       - libjxl 
+      - jxl-pixbuf-loader
