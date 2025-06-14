@@ -3,7 +3,7 @@
 
 [org/gnome/shell/extensions/Logo-menu]
 symbolic-icon=true
-menu-button-icon-image=31
+menu-button-icon-image=33
 menu-button-icon-size=20
 menu-button-terminal='xdg-terminal-exec'
 menu-button-system-monitor='flatpak run io.missioncenter.MissionCenter'
@@ -15,3 +15,7 @@ show-power-option=false
 show-gamemode=false
 hide-forcequit=true
 show-boxbuddy=true
+
+# Need to re-do this setting to enable the logo menu by defualt
+[org/gnome/shell]
+enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com','dash-to-dock@micxgx.gmail.com','blur-my-shell@aunetx','system-monitor-next@paradoxxx.zero.gmail.com', 'accent-directories@taiwbi.com', 'logomenu@aryan_k']

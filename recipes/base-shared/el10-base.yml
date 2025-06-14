@@ -104,6 +104,7 @@ modules:
       - loupe
       - PackageKit 
       - PackageKit-command-not-found
+      - gnome-extensions-app
 
   - type: dnf
     group-install:
