@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
 
 # This is a hack to allow for install of VSCode while still checking the 
-# GPG signatures on the packages.  Apparently both Microsoft is using
+# GPG signatures on the packages.  Apparently Microsoft is using
 # outdated crypto to sign packages, and their algorithms are no longer allowed by
 # default in EL 10.  So we allow it *temporarily* so we can get the package installed.
 # It's giving up some security, but it's better than not checking the signatures at all.
