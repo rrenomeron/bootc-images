@@ -26,6 +26,7 @@ modules:
   - from-file: shared/default-flatpaks.yml
   - from-file: shared/chrome.yml
   - from-file: shared/ui-fixes.yml
+  - from-file: shared/ui-fixes-10.yml
 
   # Disable rootful docker
   - type: script
