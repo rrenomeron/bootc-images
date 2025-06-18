@@ -32,6 +32,10 @@ modules:
   - from-file: shared/ui-fixes-10.yml
   - from-file: shared/ui-fixes.yml
   - from-file: shared/vscode.yml
+  - from-file: shared/ublue-multimedia-support.yml
+  - from-file: shared/ublue-batteries.yml
+  - from-file: shared/flatpak-substitutions.yml
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
+
 
