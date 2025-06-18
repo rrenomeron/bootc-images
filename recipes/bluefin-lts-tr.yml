@@ -22,11 +22,9 @@ modules:
         destination: / 
 
   - from-file: shared/workarounds.yml
-  - from-file: shared/workarounds-10.yml
   - from-file: shared/default-flatpaks.yml
   - from-file: shared/chrome.yml
   - from-file: shared/ui-fixes.yml
-  - from-file: shared/ui-fixes-10.yml
 
   # Disable rootful docker
   - type: script

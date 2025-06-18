@@ -9,3 +9,14 @@ modules:
 - type: gnome-extensions
   install:
     - system-monitor-next
+    - Accent Icons
+    - Weather or Not     
+   
+- type: gschema-overrides  # this sets up our dconf overrides
+  include:
+    - zz1-tr-el10.gschema.override
+- type: dnf
+  install:
+    packages:
+      - desktop-backgrounds-basic
+      - desktop-backgrounds-waves                   
