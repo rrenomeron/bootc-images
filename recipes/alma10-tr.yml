@@ -10,8 +10,8 @@ alt-tags:
   - latest
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/rrenomeron/almalinux-bootc-workstation-base
-image-version: 10.0
+base-image: quay.io/almalinuxorg/atomic-desktop-gnome
+image-version: latest
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -24,6 +24,7 @@ modules:
   - from-file: shared/workarounds.yml
   - from-file: shared/workarounds-10.yml
   - from-file: shared/default-flatpaks.yml
+  - from-file: shared/cockpit.yml
   - from-file: shared/chrome.yml
   - from-file: shared/virtualization.yml
   - from-file: shared/toolbox-runtimes.yml
@@ -32,6 +33,10 @@ modules:
   - from-file: shared/ui-fixes-10.yml
   - from-file: shared/ui-fixes.yml
   - from-file: shared/vscode.yml
+  - from-file: shared/ublue-multimedia-support.yml
+  - from-file: shared/ublue-batteries.yml
+  - from-file: shared/flatpak-substitutions.yml
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
+
 

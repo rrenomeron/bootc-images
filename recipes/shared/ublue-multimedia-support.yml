@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
+modules:
+  - type: dnf
+    repos:
+      files:
+        - https://negativo17.org/repos/epel-multimedia.repo
+    group-install:
+      packages:
+        - multimedia
+      with-optional: false
+      install-weak-deps: false
+    install:
+      install-weak-deps: false   
+      packages: 
+      - ffmpeg 
+      - libavcodec  
+      - lame
+      - lame-libs
+      - libjxl 
+      - jxl-pixbuf-loader
