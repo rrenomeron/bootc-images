@@ -14,7 +14,7 @@ modules:
    
 - type: gschema-overrides  # this sets up our dconf overrides
   include:
-    - zz1-tr-el10.gschema.override
+    - zz1-10-tr-ui.gschema.override
 - type: dnf
   install:
     packages:
