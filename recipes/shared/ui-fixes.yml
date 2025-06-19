@@ -19,4 +19,6 @@ modules:
   install:
     packages:
       - desktop-backgrounds-basic
-      - desktop-backgrounds-waves                   
+      - desktop-backgrounds-waves   
+      # Apparently this isn't installed in Bluefin LTS
+      - gnome-tweaks                
