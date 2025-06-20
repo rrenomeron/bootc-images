@@ -24,12 +24,6 @@ modules:
     install: 
       packages:
         - gnome-shell-extension-logo-menu
-  # By default, we do not enable the logo menu on EL, since the Workspaces menu often
-  # is branded, and it looks silly to have two logos right next to each other.
-  # CentOS Stream doesn't have this issue, so we add the logo menu.
-  - type: script
-    scripts:
-      - enable-logo-menu.sh
   
   # Alma 10.x does not include the "Internet Browser" group,
   # as it installs Firefox by other means
