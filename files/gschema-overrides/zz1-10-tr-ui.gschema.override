@@ -1,6 +1,5 @@
 [org.gnome.shell]
 favorite-apps=['org.gnome.Nautilus.desktop','google-chrome.desktop','org.libreoffice.LibreOffice.writer.desktop','org.darktable.Darktable.desktop', 'com.discordapp.Discord.desktop','com.spotify.Client.desktop', 'code.desktop', 'org.gnome.Software.desktop']
-enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com','dash-to-dock@micxgx.gmail.com','blur-my-shell@aunetx','system-monitor-next@paradoxxx.zero.gmail.com','accent-directories@taiwbi.com']
 
 [org.gnome.desktop.wm.preferences]
 button-layout=':minimize,maximize,close'
@@ -50,6 +49,12 @@ default-columns=128
 
 [org.gnome.shell.extensions.system-monitor-next-applet]
 custom-monitor-command='flatpak run io.missioncenter.MissionCenter'
+cpu-graph-width=20
+disk-display=true
+disk-graph-width=20
+icon-display=false
+memory-graph-width=20
+net-graph-width=20
 
 [org.gnome.shell.extensions.system-monitor]
 cpu-graph-width=20
