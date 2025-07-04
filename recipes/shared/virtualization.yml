@@ -5,8 +5,7 @@ modules:
       copr:
         - ublue-os/packages
     install:
-      packages:
-        - libvirt
+      packages:        
         - virt-manager
         - ublue-os-libvirt-workarounds
         - cockpit-machines

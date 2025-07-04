@@ -35,6 +35,7 @@ modules:
         - com.github.PintaProject.Pinta
         - org.gnome.clocks
         - org.gnome.Connections
+        - org.virt_manager.virt-manager
         - org.gnome.DejaDup
 
         # Personal Internet Life
