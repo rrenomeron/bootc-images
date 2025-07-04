@@ -6,7 +6,7 @@ modules:
         - ublue-os/packages
     install:
       packages:        
-        - virt-manager
+        - libvirt
         - ublue-os-libvirt-workarounds
         - cockpit-machines
  
