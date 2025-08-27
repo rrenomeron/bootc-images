@@ -9,6 +9,7 @@ modules:
           # (System Mgmt, Basic Productivity)
           - org.gtk.Gtk3theme.adw-gtk3
           - org.gtk.Gtk3theme.adw-gtk3-dark
+          - io.github.kolunmi.Bazaar
           - io.missioncenter.MissionCenter
           - org.cockpit_project.CockpitClient
           - org.gnome.Logs
