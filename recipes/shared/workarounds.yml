@@ -6,7 +6,4 @@ modules:
   - type: dnf 
     install:
       packages:
-        - patch
-  - type: script
-    scripts:
-      - patch-xdg-icon-resource.sh      
+        - patch      
