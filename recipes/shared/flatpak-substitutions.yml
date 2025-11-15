@@ -19,3 +19,4 @@ modules:
       - PackageKit 
       - PackageKit-command-not-found
       - gnome-extensions-app
+      - gnome-software
