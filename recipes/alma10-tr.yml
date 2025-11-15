@@ -22,6 +22,11 @@ modules:
         destination: / 
 
   - from-file: shared/workarounds.yml
+  # Remove when xdg-utils 1.2.0-4 hits Alma ...
+  # Needs to run before Chrome (or any RPMs are installed)
+  - type: script
+    scripts:
+      - patch-xdg-icon-resource.sh
   - from-file: shared/default-flatpaks.yml
   - from-file: shared/cockpit.yml
   - from-file: shared/chrome.yml
@@ -35,11 +40,7 @@ modules:
   - from-file: shared/ublue-batteries.yml
   - from-file: shared/flatpak-substitutions.yml
   - from-file: shared/ui-disable-logo-menu.yml
-  
-  # Remove when xdg-utils 1.2.0-4 hits Alma ...
-  - type: script
-    scripts:
-      - patch-xdg-icon-resource.sh
+
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
 
