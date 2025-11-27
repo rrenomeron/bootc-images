@@ -3,10 +3,10 @@
 # image will be published to ghcr.io/<user>/<name>
 name: almalinux-bootc-workstation-tr
 # description will be included in the image's metadata
-description: AlmaLinux 10 Kitten with my personal defaults, in a bootc image
+description: AlmaLinux 10 with my personal defaults, in a bootc image
 alt-tags:
   - "10"
-  - "10.0"
+  - "10.1"
   - latest
 
 # the base image to build on top of (FROM) and the version tag to use
