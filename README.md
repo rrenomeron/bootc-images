@@ -25,7 +25,7 @@ While EL itself is stable, these images are still under development. Be on the l
 
 ## Supported Distributions
 
-- AlmaLinux 10.0
+- AlmaLinux 10.1
 - CentOS Stream 10
 - [Bluefin LTS](https://docs.projectbluefin.io/lts/)
 
@@ -36,7 +36,7 @@ Non x86-64 architectures are not supported.
 A work in progress.  Some options:
 
 - Use ``build-iso.sh`` script in this directory, which calls
-  [``bootc-image-builder``](https://osbuild.org/docs/bootc/) in  an opinionated way (will
+  [``bootc-image-builder``](https://osbuild.org/docs/bootc/) in an opinionated way (will
   reformat the first disk it sees and install the OS)
 - Use Podman Desktop, which allows you to call ``bootc-image-builder`` with different options
 - Try methods in the [Fedora/CentOS ``bootc`` documentation](https://docs.fedoraproject.org/en-US/bootc/bare-metal/)
