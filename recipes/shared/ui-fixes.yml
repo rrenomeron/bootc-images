@@ -10,7 +10,8 @@ modules:
   install:
     - system-monitor-next
     - Accent Icons
-    - Weather or Not     
+    - Weather or Not
+    - DeskChanger     
    
 - type: gschema-overrides  # this sets up our dconf overrides
   include:
@@ -18,7 +19,6 @@ modules:
 - type: dnf
   install:
     packages:
-      - desktop-backgrounds-basic
       - desktop-backgrounds-waves   
       # Apparently this isn't installed in Bluefin LTS
       - gnome-tweaks                
