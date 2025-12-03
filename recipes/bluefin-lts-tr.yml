@@ -21,21 +21,21 @@ modules:
       - source: system
         destination: / 
 
-  - from-file: shared/workarounds.yml
-  - from-file: shared/default-flatpaks.yml
-  - from-file: shared/chrome.yml
+  - from-file: features/workarounds.yml
+  - from-file: features/default-flatpaks.yml
+  - from-file: features/chrome.yml
 
   # These Bluefin standard things appear to be missing from the LTS image
-  - from-file: shared/virtualization.yml
-  - from-file: shared/cockpit.yml
+  - from-file: features/virtualization.yml
+  - from-file: features/cockpit.yml
 
-  - from-file: shared/ui-fixes.yml
+  - from-file: features/ui-fixes.yml
   
   # By default, we do not enable the logo menu on EL, since the Activities menu often
   # is branded, and it looks silly to have two logos right next to each other.
   # Bluefin doesn't have this issue, so we keep it.
   # We need to re-enable it because our standard list of enabled extensions does not include it.
-  - from-file: shared/ui-enable-logo-menu.yml
+  - from-file: features/ui-enable-logo-menu.yml
 
   # Disable rootful docker
   - type: script

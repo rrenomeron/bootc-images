@@ -1,4 +1,7 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
+# This is a very basic set of packages meant to turn a base bootc EL image
+# into a minimally functional desktop.  Used for EL variants that don't have a 
+# base desktop bootc image.
 modules:
   - type: script
     snippets:
@@ -116,11 +119,11 @@ modules:
       with-optional: false
       packages:
         - Hardware Support 
-  # - type: dnf
-  #   group-install:
-  #     with-optional: false
-  #     packages:
-  #       - Internet Browser 
+  - type: dnf
+    group-install:
+      with-optional: false
+      packages:
+        - Internet Browser 
   - type: dnf
     group-install:
       with-optional: false
@@ -226,6 +229,7 @@ modules:
       - ublue-setup-services
       - ublue-polkit-rules
       - uupd
+      - gnome-shell-extension-logo-menu
 
   # The ublue-os-signing RPM places files in /usr/etc (which is now forbidden)
   # at install time, and then the file is moved during container build time

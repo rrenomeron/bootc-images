@@ -14,4 +14,4 @@ image-version: stream10
 
 modules:
   - type: signing
-  - from-file: shared/docker.yml
+  - from-file: features/docker.yml

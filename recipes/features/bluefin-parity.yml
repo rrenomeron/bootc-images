@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
 modules:
-# Here we add some select UI fixes from Bluefin
+# Add some select packages from Bluefin LTS
 - type: dnf
   repos:
     copr:
@@ -20,3 +20,4 @@ modules:
       - nss-mdns
       - powertop
       - fzf
+      - ffmpegthumbnailer

@@ -14,7 +14,7 @@ image-version: stream10
 
 modules:
   - type: signing
-  - from-file: shared/cockpit.yml
+  - from-file: features/cockpit.yml
   - type: dnf
     install:
       packages:

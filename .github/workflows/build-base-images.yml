@@ -31,7 +31,6 @@ jobs:
       matrix:
         recipe:
           # !! Add your recipes here
-          - stream10-workstation-base.yml
           - stream10-server-base.yml
     steps:
       # the build is fully handled by the reusable github action
