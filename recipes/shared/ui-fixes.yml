@@ -21,4 +21,5 @@ modules:
     packages:
       - desktop-backgrounds-waves   
       # Apparently this isn't installed in Bluefin LTS
-      - gnome-tweaks                
+      - gnome-tweaks 
+      - firewall-config               
