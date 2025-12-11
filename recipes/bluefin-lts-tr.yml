@@ -1,13 +1,13 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
-name: bluefin-lts-tr
+name: bluefin-dx-tr
 # description will be included in the image's metadata
 description: Bluefin-DX LTS with my personal defaults, in a bootc image
-# alt-tags:
-#   - "10"
-#   - stream10
-#   - latest
+alt-tags:
+  - lts
+  - "10"
+  - stream10
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/bluefin-dx

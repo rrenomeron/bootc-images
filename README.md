@@ -25,9 +25,9 @@ While EL itself is stable, these images are still under development. Be on the l
 
 ## Supported Distributions
 
-- AlmaLinux 10.1
-- CentOS Stream 10
-- [Bluefin LTS](https://docs.projectbluefin.io/lts/)
+- AlmaLinux 10.1 (``ghrc.io/rrenomeron/almalinux-bootc-workstation-tr``)
+- CentOS Stream 10 (``ghcr.io/rrenomeron/centos-stream-bootc-workstation-tr``)
+- [Bluefin DX LTS](https://docs.projectbluefin.io/lts/) (``ghcr.io/rrenomeron/bluefin-dx-tr:lts``)
 
 Non x86-64 architectures are not supported.
 
