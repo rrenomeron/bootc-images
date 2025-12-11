@@ -7,5 +7,3 @@ modules:
   install:
     packages:
       - google-chrome-stable
-  optfix:
-    - google

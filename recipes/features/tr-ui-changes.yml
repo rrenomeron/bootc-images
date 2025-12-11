@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
+modules:
+- type: script
+  scripts:
+    - download-and-install-fonts.sh
+    - install-system76-wallpaper.sh
+    - install-framework-wallpaper.sh
+    - install-ubuntu-wallpapers.sh
+- type: bling
+  install:
+    - dconf-update-service
+
+- type: gnome-extensions
+  install:
+    - system-monitor-next
+    - Accent Icons
+    - Weather or Not
+    - DeskChanger     
+   
+- type: gschema-overrides  # this sets up our dconf overrides
+  include:
+    - zz1-10-tr-ui.gschema.override
+- type: dnf
+  install:
+    packages:
+      - desktop-backgrounds-waves
+      - f40-backgrounds-base
+      - f41-backgrounds-base      
+      # Apparently this isn't installed in Bluefin LTS
+      - gnome-tweaks           

@@ -2,4 +2,4 @@
 modules:
 - type: gschema-overrides  # this sets up our dconf overrides
   include:
-    - zz1-11-enable-logo-menu.gschema.override
+    - zz1-11-tr-default-extensions-enable-logo-menu.gschema.override
