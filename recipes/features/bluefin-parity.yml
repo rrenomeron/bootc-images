@@ -21,3 +21,4 @@ modules:
       - powertop
       - fzf
       - ffmpegthumbnailer
+      - papers-thumbnailer 
