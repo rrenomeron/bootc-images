@@ -7,7 +7,7 @@ These are
 
 ## Available Images
 
-- AlmaLinux 10.1
+- [AlmaLinux](https://almalinux.org) 10.1
   - Desktop: ``ghcr.io/rrenomeron/almalinux-bootc-workstation-tr``
   - Server: ``ghcr.io/rrenomeron/almalinux-bootc-server-tr``
 - [Bluefin](https://projectbluefin.io/) DX (Developer Experience)
@@ -15,7 +15,7 @@ These are
   - Stable: ``ghcr.io/rrenomeron/bluefin-dx-tr:stable``
   - GTS: ``ghcr.io/rrenomeron/bluefin-dx-tr:gts``
 - [Bazzite](https://bazzite.gg) DX (Stable branch only): ``ghcr.io/rrenomeron/bazzite-tr``
-- Fedora Silverblue (43 only): ``ghcr.io/rrenomeron/silverblue-tr``
+- [Fedora Silverblue](https://fedoraproject.org/atomic-desktops/silverblue/) (43 only): ``ghcr.io/rrenomeron/silverblue-tr``
 
 Non x86-64 architectures are not supported.
 
