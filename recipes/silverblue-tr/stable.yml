@@ -36,6 +36,9 @@ modules:
         - firewall-config
         - bcache-tools
         - git-credential-libsecret
+        - socat
+        - fastfetch
+        - clinfo
     remove:
       packages:
         - gnome-software
