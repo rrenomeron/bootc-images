@@ -1,15 +1,16 @@
-# AlmaLinux/Universal Blue Bootc Images
+# Bootc Operating System Images
 
 These are
-[``bootc``](https://developers.redhat.com/articles/2024/09/24/bootc-getting-started-bootable-containers)
-container images meant to be deployed on VMs or bare metal.  
+[Bootable Container](https://developers.redhat.com/articles/2024/09/24/bootc-getting-started-bootable-containers)
+ images built with [BlueBuild](https://bulue-build.org)'s tools.  These containers consist of
+ various operating systems in the Fedora/RHEL family with my personal preferences baked in.
 
 ## Available Images
 
 - AlmaLinux 10.1
   - Desktop: ``ghcr.io/rrenomeron/almalinux-bootc-workstation-tr``
   - Server: ``ghcr.io/rrenomeron/almalinux-bootc-server-tr``
-- [Bluefin DX](https://docs.projectbluefin.io/lts/)
+- [Bluefin](https://projectbluefin.io/) DX (Developer Experience)
   - LTS: ``ghcr.io/rrenomeron/bluefin-dx-tr:lts``
   - Stable: ``ghcr.io/rrenomeron/bluefin-dx-tr:stable``
   - GTS: ``ghcr.io/rrenomeron/bluefin-dx-tr:gts``
@@ -21,7 +22,6 @@ Non x86-64 architectures are not supported.
 ## Desktop Image Features
 
 - Google Chrome RPM installed and set as default browser
-- [Variety](https://peterlevi.com/variety/) wallpaper changer (except for Bluefin LTS & AlmaLinux)
 - Clocks set to AM/PM view with Weekday Display
 - Curated selection of Flatpak apps installed automatically at runtime (this overrides Bluefin's
   default flatpak choices)
@@ -68,13 +68,26 @@ Silverblue/AlmaLinux Changes & Overrides:
 
 ## Installation
 
-A work in progress.  Some options:
+A work in progress.
 
 - Use ``build-iso.sh`` script in this directory, which calls
   [``bootc-image-builder``](https://osbuild.org/docs/bootc/) in an opinionated way (will
   reformat the first disk it sees and install the OS)
 - Use Podman Desktop, which allows you to call ``bootc-image-builder`` with different options
 - Try methods in the [Fedora/CentOS ``bootc`` documentation](https://docs.fedoraproject.org/en-US/bootc/bare-metal/)
+
+For the Fedora-based images (Silverblue, Bluefin non-LTS, Bazzite), you can do the following:
+
+ - Install any [Fedora Atomic](https://fedoraproject.org/atomic-desktops/) or
+  [Universal Blue](https://universal-blue.org) desktop edition that features GNOME
+ - Use ``bootc switch`` to switch to the image you want.  For example:
+   ```
+   sudo bootc switch ghcr.io/rrenomeron/silverblue-tr:stable --enforce-container-sigpolicy
+   ```
+ - Reboot
+   ```
+   systemctl reboot
+   ```
 
 ## TODO:
 

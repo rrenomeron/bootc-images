@@ -6,4 +6,3 @@ modules:
   - from-file: features/chrome.yml
   - from-file: features/default-flatpaks.yml
   - from-file: features/tr-ui-changes.yml
-  - from-file: features/ui-enable-logo-menu.yml
