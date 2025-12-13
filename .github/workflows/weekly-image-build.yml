@@ -35,6 +35,7 @@ jobs:
           - almalinux/bootc-workstation-tr.yml
           - bazzite-tr/testing.yml
           - bluefin-dx-tr/lts.yml
+          - bluefin-dx-tr/testing.yml
           - silverblue-tr/stable.yml
     steps:
       # the build is fully handled by the reusable github action
