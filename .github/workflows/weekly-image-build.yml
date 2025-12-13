@@ -4,10 +4,10 @@ on:
     - cron:
         "00 9 * * TUE" # build at 9 AM UTC on Tuesdays        
   push:
-    paths-ignore: # don't rebuild if only documentation has changed
+    paths-ignore:
       - "**.md"
-      - recipes/base-shared/* # Don't build if the base images recipe files changed
-      - recipes/*-base.yml
+      - "build-image.sh"
+      - "build-iso.sh"
       
   workflow_run:
     workflows: [Base Image Weekly Builds]
