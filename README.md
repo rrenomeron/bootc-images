@@ -35,20 +35,20 @@ Non x86-64 architectures are not supported.
 - [Intel One Mono](https://www.intel.com/content/www/us/en/company-overview/one-monospace-font.html) set as
   default monospace font
 
-Bluefin Changes & Overrides:
+### Bluefin Changes & Overrides:
 
 - Starship disabled by default (users can enable if needed)
 - Rootful Docker disabled.  Users can set up 
   [rootless Docker](https://docs.docker.com/engine/security/rootless/) for themselves.
 - A different list of default flatpaks
 
-Bazzite Changes & Overrides:
+### Bazzite Changes & Overrides:
 
 - GNOME desktop with simliar UI to the other images
 - Developer mode enabled (i.e. based on ``bazzite-dx-gnome``)
 - Steam does not autostart on login
 
-Silverblue/AlmaLinux Changes & Overrides:
+### Silverblue/AlmaLinux Changes & Overrides:
 
 - Visual Studio Code RPM installed
 - Libvirt/Virt-Manager installed on host
