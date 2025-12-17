@@ -33,9 +33,10 @@ jobs:
         recipe:
           - almalinux/bootc-server-tr.yml
           - almalinux/bootc-workstation-tr.yml
-          - bazzite-tr/testing.yml
+          - bazzite-tr/stable.yml
           - bluefin-dx-tr/lts.yml
-          - bluefin-dx-tr/testing.yml
+          - bluefin-dx-tr/stable.yml
+          - bluefin-dx-tr/gts.yml
           - silverblue-tr/stable.yml
     steps:
       # the build is fully handled by the reusable github action
