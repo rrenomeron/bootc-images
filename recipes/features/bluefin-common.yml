@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
+modules:
+# Things common to all Bluefin images
+  - from-file: features/common-desktop.yml
+  - from-file: features/ui-enable-logo-menu.yml
+  # Missing packages
+  - type: dnf
+    install:
+      packages:
+        - socat # socat is on LTS somehow; need to do a PR for parity
+        - nss-tools
+        - clinfo
+
+  - type: systemd
+    system:
+      disable:
+      # Disable VPNs we don't use
+      - tailscaled
+      # Disable the abomination known as rootful Docker
+      - docker.service
+      - docker.socket
+  - type: script
+    snippets:
+    # Disable Starship by default
+    - "sed -i '/starship init bash/d' /etc/bashrc"
+
+  - type: signing

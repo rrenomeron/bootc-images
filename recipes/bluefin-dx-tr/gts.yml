@@ -11,29 +11,5 @@ image-version: gts
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
-  - from-file: features/common-desktop.yml
-  - from-file: features/ui-enable-logo-menu.yml
-  # Missing packages
-  - type: dnf
-    install:
-      packages:
-        - socat
-        - nss-tools
-        - clinfo
-
-  - type: systemd
-    system:
-      disable:
-      # Disable VPNs we don't use
-      - tailscaled
-      # Disable the abomination known as rootful Docker
-      - docker.service
-      - docker.socket
-  - type: script
-    snippets:
-    # Disable Starship by default
-    - "sed -i '/starship init bash/d' /etc/bashrc"
-
-
-  - type: signing
+  - from-file: features/bluefin-common.yml
   - from-file: features/ublue-signing-key.yml
