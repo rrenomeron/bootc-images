@@ -27,4 +27,6 @@ modules:
       - f40-backgrounds-base
       - f41-backgrounds-base      
       # Apparently this isn't installed in Bluefin LTS
-      - gnome-tweaks           
+      - gnome-tweaks 
+      - firewall-config
+      - openssh-askpass              

@@ -23,6 +23,7 @@ modules:
       - powertop
       - fzf
       - ffmpegthumbnailer
+      - papers-thumbnailer 
       - openssh-askpass
       - waypipe
       - firewall-config
