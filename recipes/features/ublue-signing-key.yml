@@ -2,7 +2,7 @@
 modules:
 
   # Trust Sigstore signing key from https://github.com/rrenomeron/ublue-tr
-  # Remove when images built form ublue-tr repository are no longer available
+  # Remove when images built from the ublue-tr repository are no longer available
   # on ghrc.io
   - type: script
     scripts:

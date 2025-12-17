@@ -23,9 +23,9 @@ Non x86-64 architectures are not supported.
 
 - Google Chrome RPM installed and set as default browser
 - Clocks set to AM/PM view with Weekday Display
-- Curated selection of Flatpak apps installed automatically at runtime (this overrides Bluefin's
-  default flatpak choices)
+- Curated selection of Flatpak apps installed automatically
 - Single click to open items in Nautilus
+- Nautilus icons [match accent color](https://extensions.gnome.org/extension/7535/accent-directories/)
 - Use smaller icons in Nautilus icon view
 - Sort directories first in Nautilus and GTK file choosers
 - Dark styles enabled by default

@@ -13,7 +13,6 @@ image-version: 43
 
 modules:
   - from-file: features/common-desktop.yml
-  - from-file: features/vscode.yml
   - from-file: features/ublue-batteries.yml
   - from-file: features/ui-enable-logo-menu.yml
   - from-file: features/virtualization.yml
@@ -42,6 +41,8 @@ modules:
     remove:
       packages:
         - gnome-software
+  # vscode goes last due to some crypto issues
+  - from-file: features/vscode.yml
   - type: systemd
     # Use uupd for updates rather than the default
     system:
