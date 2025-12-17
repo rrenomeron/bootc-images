@@ -13,6 +13,14 @@ image-version: gts
 modules:
   - from-file: features/common-desktop.yml
   - from-file: features/ui-enable-logo-menu.yml
+  # Missing packages
+  - type: dnf
+    install:
+      packages:
+        - socat
+        - nss-tools
+        - clinfo
+
   - type: systemd
     system:
       disable:
