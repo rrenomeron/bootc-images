@@ -24,3 +24,4 @@ modules:
       - bazzite-disable-steam-autostart.sh
 
   - type: signing
+  - from-file: features/ublue-signing-key.yml
