@@ -29,7 +29,7 @@ modules:
   - from-file: features/virtualization.yml
   - from-file: features/cockpit.yml
 
-  - from-file: features/ui-fixes.yml
+  - from-file: features/tr-ui-changes.yml
   
   # By default, we do not enable the logo menu on EL, since the Activities menu often
   # is branded, and it looks silly to have two logos right next to each other.

@@ -1,39 +1,74 @@
-# Enterprise Linux Bootc Images
+# Bootc Operating System Images
 
-These are Enterprise Linux (EL)
-[``bootc``](https://developers.redhat.com/articles/2024/09/24/bootc-getting-started-bootable-containers) container images meant to be deployed on VMs or bare metal.  They are currently focused on
-the desktop/workstation use case, although there is currently an experimental server base image.
+These are
+[Bootable Container](https://developers.redhat.com/articles/2024/09/24/bootc-getting-started-bootable-containers)
+ images built with [BlueBuild](https://bulue-build.org)'s tools.  These containers consist of
+ various operating systems in the Fedora/RHEL family with my personal preferences baked in.
 
-While EL itself is stable, these images are still under development. Be on the lookout for problems.
+## Available Images
 
-## Desktop Features
-
-- Installed on image:
-    - Google Chrome
-    - Visual Studio Code
-    - Docker (Rootful Docker disabled by default)
-    - Cockpit
-    - Libvirt
-
-- GNOME UI Fixes inspired by [Bluefin](https://projectbluefin.io)
-    - Maximize/Minimize buttons enabled
-    - Dash To Dock, App Indicators, Blur My Shell, GNOME Tweaks installed on image
-    - Logo Menu on CentOS Stream 10
-    - Clocks set to AM/PM with weekday display
-    - Nautilus: single click to open, smaller icons, full delete and symlink creation enabled
-    - [Intel One Mono](https://www.intel.com/content/www/us/en/company-overview/one-monospace-font.html) as default monospace font, [Cascadia Code](https://learn.microsoft.com/en-us/windows/terminal/cascadia-code) available
-
-## Supported Distributions
-
-- AlmaLinux 10.1 (``ghrc.io/rrenomeron/almalinux-bootc-workstation-tr``)
-- CentOS Stream 10 (``ghcr.io/rrenomeron/centos-stream-bootc-workstation-tr``)
-- [Bluefin DX LTS](https://docs.projectbluefin.io/lts/) (``ghcr.io/rrenomeron/bluefin-dx-tr:lts``)
+- [AlmaLinux](https://almalinux.org) 10.1
+  - Desktop: ``ghcr.io/rrenomeron/almalinux-bootc-workstation-tr``
+  - Server: ``ghcr.io/rrenomeron/almalinux-bootc-server-tr``
+- [Bluefin](https://projectbluefin.io/) DX (Developer Experience)
+  - LTS: ``ghcr.io/rrenomeron/bluefin-dx-tr:lts``
+  - Stable: ``ghcr.io/rrenomeron/bluefin-dx-tr:stable``
+  - GTS: ``ghcr.io/rrenomeron/bluefin-dx-tr:gts``
+- [Bazzite](https://bazzite.gg) DX (Stable branch only): ``ghcr.io/rrenomeron/bazzite-tr``
+- [Fedora Silverblue](https://fedoraproject.org/atomic-desktops/silverblue/) (43 only): ``ghcr.io/rrenomeron/silverblue-tr``
 
 Non x86-64 architectures are not supported.
 
+## Desktop Image Features
+
+- Google Chrome RPM installed and set as default browser
+- Clocks set to AM/PM view with Weekday Display
+- Curated selection of Flatpak apps installed automatically
+- Single click to open items in Nautilus
+- Nautilus icons [match accent color](https://extensions.gnome.org/extension/7535/accent-directories/)
+- Use smaller icons in Nautilus icon view
+- Sort directories first in Nautilus and GTK file choosers
+- Dark styles enabled by default
+- [System76 wallpaper collection](https://system76.com/merch/desktop-wallpapers)
+- [Framework 12](https://frame.work/laptop12) wallpapers
+- Historical Ubuntu wallpapers, mostly from the LTS versions
+- [Intel One Mono](https://www.intel.com/content/www/us/en/company-overview/one-monospace-font.html) set as
+  default monospace font
+
+### Bluefin Changes & Overrides:
+
+- Starship disabled by default (users can enable if needed)
+- Rootful Docker disabled.  Users can set up 
+  [rootless Docker](https://docs.docker.com/engine/security/rootless/) for themselves.
+- A different list of default flatpaks
+
+### Bazzite Changes & Overrides:
+
+- GNOME desktop with simliar UI to the other images
+- Developer mode enabled (i.e. based on ``bazzite-dx-gnome``)
+- Steam does not autostart on login
+
+### Silverblue/AlmaLinux Changes & Overrides:
+
+- Visual Studio Code RPM installed
+- Libvirt/Virt-Manager installed on host
+- Docker CE installed with rootful Docker disabled
+- Dash-to-Dock enabled by default, skipping Overview on login
+- Appindicators enabled by default
+- Logo Menu enabled by default (like Bluefin)
+- Windows have minimize and maximize buttons (like Ubuntu and Bluefin)
+- Additional packages (e.g. Firewall GUI, rclone/restic, Universal Blue enhancements)
+- ``<CTRL><ALT>t`` opens a terminal
+    
+## Server Image Features
+
+- All the advantages of atomic updates
+- Docker (Rootful Docker disabled by default)
+- Cockpit
+
 ## Installation
 
-A work in progress.  Some options:
+A work in progress.
 
 - Use ``build-iso.sh`` script in this directory, which calls
   [``bootc-image-builder``](https://osbuild.org/docs/bootc/) in an opinionated way (will
@@ -41,13 +76,23 @@ A work in progress.  Some options:
 - Use Podman Desktop, which allows you to call ``bootc-image-builder`` with different options
 - Try methods in the [Fedora/CentOS ``bootc`` documentation](https://docs.fedoraproject.org/en-US/bootc/bare-metal/)
 
+For the Fedora-based images (Silverblue, Bluefin non-LTS, Bazzite), you can do the following:
+
+ - Install any [Fedora Atomic](https://fedoraproject.org/atomic-desktops/) or
+  [Universal Blue](https://universal-blue.org) desktop edition that features GNOME
+ - Use ``bootc switch`` to switch to the image you want.  For example:
+   ```
+   sudo bootc switch ghcr.io/rrenomeron/silverblue-tr:stable --enforce-container-sigpolicy
+   ```
+ - Reboot
+   ```
+   systemctl reboot
+   ```
+
 ## TODO:
 
-- Test applications installed by RPMs to see if they actually work
-- Fully [refactor recipes in terms of
-  "features"](https://github.com/rrenomeron/ublue-tr/commit/59c87c711777aa29a8939d88ebd4320b4e6998bc)
-- Review CentOS Stream 10 workstation base image layer efficiency after a few updates
-- Add workstation base image version in ``/etc/os-release``
 - Create installer ISOs using [Titanboa](https://github.com/ublue-os/titanboa) and
   [Readymade](https://github.com/FyraLabs/readymade)
+- Refactor recipies for further efficiency
+- Figure out how to use renovate to start builds when base images change
 

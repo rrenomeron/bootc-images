@@ -1,20 +1,21 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
-name: centos-stream-bootc-server-base
+name: almalinux-bootc-server-tr
 # description will be included in the image's metadata
 description: A minimal bootc CentOS Stream Server image
 alt-tags:
   - "10"
-  - stream10
+  - "10.1"
   - latest
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: quay.io/centos-bootc/centos-bootc
-image-version: stream10
+base-image: quay.io/almalinuxorg/almalinux-bootc
+image-version: "10.1"
 
 modules:
   - type: signing
   - from-file: features/cockpit.yml
+  - from-file: features/docker.yml
   - type: dnf
     install:
       packages:

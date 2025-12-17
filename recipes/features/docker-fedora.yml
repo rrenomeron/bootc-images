@@ -3,7 +3,7 @@ modules:
   - type: dnf
     repos:
       files:
-        - docker-ce-stable.repo
+        - docker-ce-fedora.repo
     install:
       packages:
         - docker-ce 

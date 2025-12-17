@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+name: bluefin-dx-tr
+# description will be included in the image's metadata
+description: Bluefin DX with my personal preferences baked in. This bootable container image follows Bluefin's stable-weekly image channel.
+alt-tags:
+  - stable
+  - stable-weekly
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/ublue-os/bluefin-dx
+image-version: stable
+# module configuration, executed in order
+# you can include multiple instances of the same module
+modules:
+  - from-file: features/common-desktop.yml
+  - from-file: features/ui-enable-logo-menu.yml
+  - type: systemd
+    system:
+      disable:
+      # Disable VPNs we don't use
+      - tailscaled
+      # Disable the abomination known as rootful Docker
+      - docker.service
+      - docker.socket
+  - type: script
+    snippets:
+    # Disable Starship by default
+    - "sed -i '/starship init bash/d' /etc/bashrc"
+
+
+  - type: signing
+  - from-file: features/ublue-signing-key.yml

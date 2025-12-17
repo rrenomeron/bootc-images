@@ -7,10 +7,12 @@ modules:
       - ublue-os/staging
       - ublue-os/packages
   install:
+    install-weak-deps: false
     packages:
       - gnome-shell-extension-appindicator
       - gnome-shell-extension-dash-to-dock 
       - gnome-shell-extension-blur-my-shell
+      - gnome-shell-extension-logo-menu
       - desktop-backgrounds-waves
       - bluefin-backgrounds
       - rclone
@@ -22,3 +24,6 @@ modules:
       - fzf
       - ffmpegthumbnailer
       - papers-thumbnailer 
+      - openssh-askpass
+      - waypipe
+      - firewall-config

@@ -1,0 +1,53 @@
+## yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+name: silverblue-tr
+# description will be included in the image's metadata
+description: A Fedora Silverblue Bootable Container image with my personal preferences and Universal Blue improvements baked in
+
+alt-tags:
+  - stable
+  - "43"
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/ublue-os/silverblue-main
+image-version: 43
+
+modules:
+  - from-file: features/common-desktop.yml
+  - from-file: features/ublue-batteries.yml
+  - from-file: features/ui-enable-logo-menu.yml
+  - from-file: features/virtualization.yml
+  - from-file: features/docker-fedora.yml
+  - from-file: features/cockpit.yml
+  - from-file: features/bluefin-parity.yml
+  - type: dnf
+    repos:
+      copr:
+        - ublue-os/staging
+        - ublue-os/packages
+    install:
+      install-weak-deps: false
+      packages:
+        # These are generally packages from Bluefin (DX)
+        # that we want, but aren't in the Silverblue image
+        - ublue-brew
+        - setools-console
+        - lm_sensors
+        - firewall-config
+        - bcache-tools
+        - git-credential-libsecret
+        - socat
+        - fastfetch
+        - clinfo
+    remove:
+      packages:
+        - gnome-software
+  # vscode goes last due to some crypto issues
+  - from-file: features/vscode.yml
+  - type: systemd
+    # Use uupd for updates rather than the default
+    system:
+      enabled:
+        - uupd.timer
+      disabled:
+        - rpm-ostreed-automatic.timer
+        - flatpak-system-update.timer

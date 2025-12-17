@@ -6,8 +6,6 @@ modules:
       copr:
         - ublue-os/staging
         - ublue-os/packages
-      files:
-        - https://negativo17.org/repos/epel-multimedia.repo
     install:
       install-weak-deps: false
       packages:
@@ -16,7 +14,6 @@ modules:
       - ublue-os-signing
       - ublue-os-udev-rules
       - ublue-os-update-services
-      - ublue-motd      
       - ublue-setup-services
       - ublue-polkit-rules
       - uupd

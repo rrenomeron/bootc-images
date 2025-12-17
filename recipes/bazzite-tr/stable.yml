@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+name: bazzite-tr
+# description will be included in the image's metadata
+description: Bazzite with my personal preferences baked in, including the GNOME desktop.  This bootable container image follows Bazzite's stable-weekly image channel.
+alt-tags:
+  - stable
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/ublue-os/bazzite-dx-gnome
+image-version: stable
+
+# module configuration, executed in order
+# you can include multiple instances of the same module
+modules:
+  - from-file: features/common-desktop.yml
+  - from-file: features/cockpit.yml
+
+  - type: gnome-extensions
+    install:
+      - Dash to Dock
+  - type: script
+    snippets: []
+    scripts: 
+      - bazzite-disable-steam-autostart.sh
+
+  - type: signing
+  - from-file: features/ublue-signing-key.yml
