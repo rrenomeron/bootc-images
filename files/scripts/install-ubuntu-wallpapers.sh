@@ -10,7 +10,8 @@ cd /tmp
 # git clone https://git.launchpad.net/ubuntu/+source/ubuntu-wallpapers
 # cd ubuntu-wallpapers
 echo "Downloading Ubuntu wallpapers from launchpad.net"
-wget https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/ubuntu-wallpapers/24.04.2/ubuntu-wallpapers_24.04.2.orig.tar.gz 
+curl -L https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/ubuntu-wallpapers/24.04.2/ubuntu-wallpapers_24.04.2.orig.tar.gz \
+  > ubuntu-wallpapers_24.04.2.orig.tar.gz
 tar xvzf ubuntu-wallpapers_24.04.2.orig.tar.gz 
 cd ubuntu-wallpapers_24.04.2.orig
 
