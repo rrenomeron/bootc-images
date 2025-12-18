@@ -14,7 +14,6 @@ modules:
       - gnome-shell-extension-blur-my-shell
       - gnome-shell-extension-logo-menu
       - desktop-backgrounds-waves
-      - bluefin-backgrounds
       - rclone
       - restic
       - gnome-disk-utility
@@ -27,3 +26,8 @@ modules:
       - openssh-askpass
       - waypipe
       - firewall-config
+# Bluefin moved their artwork to an OCI container
+- type: copy
+  from: ghcr.io/ublue-os/bluefin-wallpapers-gnome:latest
+  src: /
+  dest: /usr/share/backgrounds/bluefin
