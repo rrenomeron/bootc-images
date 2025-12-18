@@ -91,8 +91,9 @@ For the Fedora-based images (Silverblue, Bluefin non-LTS, Bazzite), you can do t
 
 ## TODO:
 
-- Create installer ISOs using [Titanboa](https://github.com/ublue-os/titanboa) and
-  [Readymade](https://github.com/FyraLabs/readymade)
+- Create installer ISOs using similar methods as Bluefin and/or Bazzite
 - Refactor recipies for further efficiency
+- Push things like wallpapers (and maybe fonts) to an OCI layer, like
+  [Bluefin does with their "common" image](https://github.com/projectbluefin/common)
 - Figure out how to use renovate to start builds when base images change
-
+- Only build images that are affected by pushed changes
