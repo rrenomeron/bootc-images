@@ -13,6 +13,7 @@ image-version: stable
 # you can include multiple instances of the same module
 modules:
   - from-file: features/common-desktop.yml
+  - from-file: features/cascadia-code.yml
   - from-file: features/cockpit.yml
 
   - type: gnome-extensions

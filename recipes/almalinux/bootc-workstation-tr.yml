@@ -35,6 +35,7 @@ modules:
   - from-file: features/docker.yml
   - from-file: features/bluefin-parity.yml
   - from-file: features/tr-ui-changes.yml
+  - from-file: features/cascadia-code.yml
   - from-file: features/ublue-multimedia-support.yml
   - from-file: features/ublue-batteries.yml
   - from-file: features/flatpak-substitutions.yml

@@ -13,6 +13,7 @@ image-version: 43
 
 modules:
   - from-file: features/common-desktop.yml
+  - from-file: features/cascadia-code.yml
   - from-file: features/ublue-batteries.yml
   - from-file: features/ui-enable-logo-menu.yml
   - from-file: features/virtualization.yml

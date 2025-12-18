@@ -2,10 +2,22 @@
 modules:
 - type: script
   scripts:
-    - download-and-install-fonts.sh
     - install-system76-wallpaper.sh
     - install-framework-wallpaper.sh
     - install-ubuntu-wallpapers.sh
+
+- type: fonts
+  fonts:
+    google-fonts:
+      - Roboto 
+      - Roboto Condensed 
+      - Charis SIL
+      - Lato
+      - Montserrat
+    url-fonts:
+      - name: intel-one-mono-fonts 
+        url: https://github.com/intel/intel-one-mono/releases/download/V1.4.0/otf.zip
+
 - type: bling
   install:
     - dconf-update-service

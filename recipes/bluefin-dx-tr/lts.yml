@@ -17,7 +17,7 @@ image-version: lts
 # you can include multiple instances of the same module
 modules:
   - from-file: features/bluefin-common.yml
-
+  - from-file: features/cascadia-code.yml
   # These Bluefin standard things appear to be missing from the LTS image
   # Need to file a "parity" bug with LTS
   - from-file: features/cockpit.yml
