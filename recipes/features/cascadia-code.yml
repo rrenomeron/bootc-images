@@ -5,8 +5,8 @@ modules:
     url-fonts:
       - name: cascadia-code
         url: https://github.com/microsoft/cascadia-code/releases/download/v2407.24/CascadiaCode-2407.24.zip
-      # There's a dumb bug in this module where if we have a 2nd instance, it will overwrite a
-      # previous instance's work.  So we have to download intel-one-mono again.
+      # This module clears out the directory where it puts the fonts (/usr/share/fonts/url-fonts) 
+      # on each module invocation.  So we have to download intel-one-mono again.
       - name: intel-one-mono-fonts 
         url: https://github.com/intel/intel-one-mono/releases/download/V1.4.0/otf.zip
         
