@@ -1,0 +1,11 @@
+FROM quay.io/fedora/fedora-minimal AS build
+
+RUN dnf install -y unzip tar gzip
+COPY ../files/scripts/install-*wallpaper*.sh /usr/local/bin
+RUN chmod ugo+x /usr/local/bin/*
+RUN /usr/local/bin/install-system76-wallpaper.sh
+RUN /usr/local/bin/install-ubuntu-wallpapers.sh
+RUN /usr/local/bin/install-framework-wallpaper.sh
+
+FROM scratch
+COPY --from=build /usr/share/backgrounds /

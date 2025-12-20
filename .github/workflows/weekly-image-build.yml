@@ -1,4 +1,4 @@
-name: User Desktop Image Builds
+name: Build All OS Images
 on:
   schedule:
     - cron:
@@ -8,6 +8,7 @@ on:
       - "**.md"
       - "build-image.sh"
       - "build-iso.sh"
+      - "wallpaper-layer/**"
       
   workflow_run:
     workflows: [Base Image Weekly Builds]
