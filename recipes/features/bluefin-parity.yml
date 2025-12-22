@@ -26,6 +26,23 @@ modules:
       - openssh-askpass
       - waypipe
       - firewall-config
+      - ublue-os-luks
+      - ublue-os-signing
+      - ublue-os-udev-rules
+      - ublue-os-update-services
+      - ublue-polkit-rules
+      - uupd
+  
+# Use uupd for updates
+- type: systemd
+  system:
+    enabled:
+      - uupd.timer
+    disabled:
+      - rpm-ostreed-automatic.timer
+      - flatpak-system-update.timer
+      - bootc-fetch-apply-updates.timer
+
 # Bluefin moved their artwork to an OCI container
 - type: copy
   from: ghcr.io/ublue-os/bluefin-wallpapers-gnome:latest

@@ -14,7 +14,6 @@ image-version: 43
 modules:
   - from-file: features/common-desktop.yml
   - from-file: features/cascadia-code.yml
-  - from-file: features/ublue-batteries.yml
   - from-file: features/ui-enable-logo-menu.yml
   - from-file: features/virtualization.yml
   - from-file: features/docker-fedora.yml
@@ -43,11 +42,3 @@ modules:
         - gnome-software
   # vscode goes last due to some crypto issues
   - from-file: features/vscode.yml
-  - type: systemd
-    # Use uupd for updates rather than the default
-    system:
-      enabled:
-        - uupd.timer
-      disabled:
-        - rpm-ostreed-automatic.timer
-        - flatpak-system-update.timer
