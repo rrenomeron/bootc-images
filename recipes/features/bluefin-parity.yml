@@ -32,7 +32,6 @@ modules:
       - firewall-config
       - setools-console
       - lm_sensors
-      - bcache-tools
       - clinfo
       - ublue-os-luks
       - ublue-os-signing
