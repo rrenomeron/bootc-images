@@ -31,3 +31,7 @@ modules:
   from: ghcr.io/ublue-os/bluefin-wallpapers-gnome:latest
   src: /
   dest: /usr/share/backgrounds/bluefin
+# Install Brew
+- type: brew
+  nofile-limits: true
+  auto-upgrade: false  # We have uupd to do this for us

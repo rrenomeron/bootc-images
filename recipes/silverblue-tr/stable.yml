@@ -30,7 +30,6 @@ modules:
       packages:
         # These are generally packages from Bluefin (DX)
         # that we want, but aren't in the Silverblue image
-        - ublue-brew
         - setools-console
         - lm_sensors
         - firewall-config

@@ -9,11 +9,20 @@ modules:
     install:
       install-weak-deps: false
       packages:
-      - ublue-os-just
       - ublue-os-luks
       - ublue-os-signing
       - ublue-os-udev-rules
       - ublue-os-update-services
-      - ublue-setup-services
       - ublue-polkit-rules
       - uupd
+
+    # Use uupd for updates
+  - type: systemd
+  # Use uupd for updates rather than the default
+    system:
+      enabled:
+        - uupd.timer
+      disabled:
+        - rpm-ostreed-automatic.timer
+        - flatpak-system-update.timer
+        - bootc-fetch-apply-updates.timer
