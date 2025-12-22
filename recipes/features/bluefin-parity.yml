@@ -1,6 +1,14 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
 modules:
-# Add some select packages from Bluefin LTS
+# Install the important GNOME Extensions 
+- type: gnome-extensions
+  install:
+  - AppIndicator and KStatusNotifierItem Support
+  - Dash to Dock
+  - Blur my Shell 
+  - Logo Menu 
+
+# Install packages that Bluefin comes with (or we add to bluefin)
 - type: dnf
   repos:
     copr:
@@ -9,10 +17,6 @@ modules:
   install:
     install-weak-deps: false
     packages:
-      - gnome-shell-extension-appindicator
-      - gnome-shell-extension-dash-to-dock 
-      - gnome-shell-extension-blur-my-shell
-      - gnome-shell-extension-logo-menu
       - desktop-backgrounds-waves
       - rclone
       - restic
@@ -26,12 +30,19 @@ modules:
       - openssh-askpass
       - waypipe
       - firewall-config
+      - setools-console
+      - lm_sensors
+      - bcache-tools
+      - clinfo
       - ublue-os-luks
       - ublue-os-signing
       - ublue-os-udev-rules
       - ublue-os-update-services
       - ublue-polkit-rules
       - uupd
+
+# VSCode gets installed by itself to work around EL10 crypto issues
+- from-file: features/vscode.yml      
   
 # Use uupd for updates
 - type: systemd

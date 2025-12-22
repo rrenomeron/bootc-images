@@ -18,7 +18,6 @@ modules:
   - from-file: features/virtualization.yml
   - from-file: features/docker-fedora.yml
   - from-file: features/cockpit.yml
-  - from-file: features/bluefin-parity.yml
   - type: dnf
     repos:
       copr:
@@ -29,16 +28,11 @@ modules:
       packages:
         # These are generally packages from Bluefin (DX)
         # that we want, but aren't in the Silverblue image
-        - setools-console
-        - lm_sensors
-        - firewall-config
-        - bcache-tools
         - git-credential-libsecret
         - socat
         - fastfetch
-        - clinfo
     remove:
       packages:
         - gnome-software
-  # vscode goes last due to some crypto issues
-  - from-file: features/vscode.yml
+
+  - from-file: features/bluefin-parity.yml        

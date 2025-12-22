@@ -41,8 +41,6 @@ modules:
   # AlmaLinux "brands" the activity button (as do the other RHEL distros),
   # so we can't use the Logo Menu with it
   - from-file: features/ui-disable-logo-menu.yml
-  # vscode goes last due to some crypto issues
-  - from-file: features/vscode.yml
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
