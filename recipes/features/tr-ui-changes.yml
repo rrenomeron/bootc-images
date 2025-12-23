@@ -10,13 +10,17 @@ modules:
   fonts:
     google-fonts:
       - Roboto 
-      - Roboto Condensed 
-      - Charis SIL
+      - Roboto Condensed
       - Lato
+      - Lora
       - Montserrat
     url-fonts:
       - name: intel-one-mono-fonts 
         url: https://github.com/intel/intel-one-mono/releases/download/V1.4.0/otf.zip
+      - name: gentium-7
+        url: https://software.sil.org/downloads/r/gentium/Gentium-7.000.zip
+      - name: charis-7
+        url: https://software.sil.org/downloads/r/charis/Charis-7.000.zip
 
 - type: bling
   install:
