@@ -14,7 +14,7 @@ image-version: 43
 modules:
   - from-file: features/common-desktop.yml
   - from-file: features/cascadia-code.yml
-  - from-file: features/ui-enable-logo-menu.yml
+  - from-file: features/default-extensions-enable-logo-menu.yml
   - from-file: features/virtualization.yml
   - from-file: features/docker-fedora.yml
   - from-file: features/cockpit.yml

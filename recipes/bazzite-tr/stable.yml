@@ -9,13 +9,14 @@ alt-tags:
 base-image: ghcr.io/ublue-os/bazzite-dx-gnome
 image-version: stable
 
-# module configuration, executed in order
-# you can include multiple instances of the same module
 modules:
   - from-file: features/common-desktop.yml
+  - from-file: features/default-extensions-enable-logo-menu.yml
   - from-file: features/cascadia-code.yml
   - from-file: features/cockpit.yml
 
+  # Bazzite doesn't include Dash To Dock, but it has all
+  # the other "Bluefin Parity" items
   - type: gnome-extensions
     install:
       - Dash to Dock

@@ -40,7 +40,7 @@ modules:
   - from-file: features/bluefin-parity.yml
   # AlmaLinux "brands" the activity button (as do the other RHEL distros),
   # so we can't use the Logo Menu with it
-  - from-file: features/ui-disable-logo-menu.yml
+  - from-file: features/default-extensions-disable-logo-menu.yml
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
