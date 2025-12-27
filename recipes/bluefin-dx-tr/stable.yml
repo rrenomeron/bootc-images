@@ -13,4 +13,4 @@ image-version: stable
 # you can include multiple instances of the same module
 modules:
   - from-file: features/bluefin-common.yml
-  - from-file: features/ubulue-tr-signing-key.yml
+  - from-file: features/ublue-tr-signing-key.yml

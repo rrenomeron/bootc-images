@@ -26,4 +26,4 @@ modules:
       - bazzite-disable-steam-autostart.sh
 
   - type: signing
-  - from-file: features/ubulue-tr-signing-key.yml
+  - from-file: features/ublue-tr-signing-key.yml
