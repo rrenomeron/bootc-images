@@ -3,7 +3,7 @@ modules:
 
   # Trust Sigstore signing key from https://github.com/rrenomeron/ublue-tr
   # Remove when images built from the ublue-tr repository are no longer available
-  # on ghrc.io
+  # on ghcr.io, on or about 03/20/2026.
   - type: script
     scripts:
       - add-ublue-tr-sigstore-key.sh
