@@ -26,6 +26,14 @@ modules:
       packages:
         - cockpit-machines
         - netcat
+
+  # Temporary hack to get Adwaita fonts until upstream gets them in a COPR
+  # See https://github.com/ublue-os/bluefin-lts/issues/811
+  - type: fonts
+    fonts:
+      url-fonts:
+      - name: Adwaita
+        url: https://download.gnome.org/sources/adwaita-fonts/49/adwaita-fonts-49.0.tar.xz
   
   - from-file: features/workarounds.yml
 
