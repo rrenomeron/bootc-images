@@ -25,7 +25,12 @@ Non x86-64 architectures are not supported.
 - Clocks set to AM/PM view with Weekday Display
 - Curated selection of Flatpak apps installed automatically
 - Single click to open items in Nautilus
-- Nautilus icons [match accent color](https://extensions.gnome.org/extension/7535/accent-directories/)
+- Nautilus icons [match accent
+  color](https://extensions.gnome.org/extension/7535/accent-directories/)
+- [System monitor applet](https://github.com/mgalgs/gnome-shell-system-monitor-next-applet) in
+  top panel next to Gnome system menu
+- [DeskChanger](https://github.com/BigE/desk-changer/) wallpaper manager
+- [Weather applet](https://gitlab.gnome.org/somepaulo/weather-or-not)
 - Use smaller icons in Nautilus icon view
 - Sort directories first in Nautilus and GTK file choosers
 - Dark styles enabled by default
@@ -51,7 +56,7 @@ Non x86-64 architectures are not supported.
 ### Silverblue/AlmaLinux Changes & Overrides:
 
 - Visual Studio Code RPM installed
-- Libvirt/Virt-Manager installed on host
+- Libvirt/Virt-Manager RPMs installed
 - Docker CE installed with rootful Docker disabled
 - Dash-to-Dock enabled by default, skipping Overview on login
 - Appindicators enabled by default
