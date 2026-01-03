@@ -1,4 +1,4 @@
-#/usr/bin/bash
+#!/usr/bin/bash
 
 # This hot-patches (cringe!) the xdg-icon-resource command in order to work around
 # https://issues.redhat.com/browse/RHEL-72199 until we can get a patched 
