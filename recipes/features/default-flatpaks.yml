@@ -56,6 +56,5 @@ modules:
           - org.sqlitebrowser.sqlitebrowser 
           - io.dbeaver.DBeaverCommunity
           - com.ranfdev.DistroShelf
-          - sh.loft.devpod
           - me.iepure.devtoolbox
           - io.podman_desktop.PodmanDesktop    
