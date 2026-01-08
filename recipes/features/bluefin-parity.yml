@@ -33,16 +33,17 @@ modules:
       - setools-console
       - lm_sensors
       - clinfo
-      - ublue-os-luks
-      - ublue-os-signing
-      - ublue-os-udev-rules
-      - ublue-os-update-services
-      - ublue-polkit-rules
       - uupd
 
 # VSCode gets installed by itself to work around EL10 crypto issues
 - from-file: features/vscode.yml      
   
+# Bluefin moved all of their custom packages to an OCI container
+- type: copy
+  from: ghcr.io/projectbluefin/common:latest
+  src: /system_files/shared 
+  dest: /
+
 # Use uupd for updates
 - type: systemd
   system:
