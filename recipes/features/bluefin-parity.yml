@@ -34,6 +34,10 @@ modules:
       - lm_sensors
       - clinfo
       - uupd
+      - glow
+
+# Needed because ublue-motd runs on our non-ublue images
+- from-file: features/minimal-ublue-motd.yml
 
 # VSCode gets installed by itself to work around EL10 crypto issues
 - from-file: features/vscode.yml      

@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
+modules:
+  - type: files
+    files: 
+    - source: ublue-motd
+      destination: /usr/share/ublue-os/motd
+
+  - type: script
+    scripts:
+      - generate-motd-setup.sh
