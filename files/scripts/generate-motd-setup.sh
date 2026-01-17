@@ -6,6 +6,6 @@ cat > /usr/share/ublue-os/motd/env.sh << EOF
 #!/usr/bin/env sh
 # KEEP THIS SMALL
 # This will run on every shell that a user starts up.
-MOTD_IMAGE_NAME=$IMAGE_NAME
-MOTD_IMAGE_TAGE=$OS_VERSION
+export MOTD_IMAGE_NAME=$IMAGE_NAME
+export MOTD_IMAGE_TAGE=$OS_VERSION
 EOF
