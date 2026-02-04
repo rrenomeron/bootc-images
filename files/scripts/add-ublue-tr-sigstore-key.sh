@@ -4,7 +4,7 @@
 # as a valid sigstore signing key for our image, so we can trust builds
 # from that repository too.
 #
-# Remove 90 days after ublue-tr is not longer producing builds,
+# Remove 90 days after ublue-tr is no longer producing builds,
 # and its builds are no longer available on ghcr
 
 set -eou pipefail
