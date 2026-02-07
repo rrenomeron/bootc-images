@@ -20,8 +20,7 @@ modules:
       - docker.service
       - docker.socket
   - type: script
-    snippets:
-    # Disable Starship by default
-    - "sed -i '/starship init bash/d' /etc/bashrc"
+    scripts:
+    - disable-starship-by-default.sh
 
   - type: signing
