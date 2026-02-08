@@ -3,3 +3,7 @@ modules:
     files:
       - source: system
         destination: / 
+  - type: script
+    snippets:
+    # We run this to put get our home CA in the system circle of trust
+      - "update-ca-trust extract"        
