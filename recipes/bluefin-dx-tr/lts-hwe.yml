@@ -1,0 +1,31 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+# image will be published to ghcr.io/<user>/<name>
+name: bluefin-dx-tr
+# description will be included in the image's metadata
+description: Bluefin-DX LTS with my personal defaults, in a bootc image
+alt-tags:
+  - lts-hwe
+  - 10-hwe
+  - stream10-hwe
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/ublue-os/bluefin-dx
+image-version: lts-hwe
+
+# module configuration, executed in order
+# you can include multiple instances of the same module
+modules:
+  - from-file: features/bluefin-common.yml
+  - from-file: features/cascadia-code.yml
+  # These Bluefin standard things appear to be missing from the LTS image
+  # Need to file a "parity" bug with LTS
+  - from-file: features/cockpit.yml
+  - type: dnf
+    install:
+      packages:
+        - cockpit-machines
+        - netcat
+  
+  - from-file: features/workarounds.yml
+
