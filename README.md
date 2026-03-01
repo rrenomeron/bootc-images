@@ -11,9 +11,8 @@ These are
   - Desktop: ``ghcr.io/rrenomeron/almalinux-bootc-workstation-tr``
   - Server: ``ghcr.io/rrenomeron/almalinux-bootc-server-tr``
 - [Bluefin](https://projectbluefin.io/) DX (Developer Experience)
-  - LTS: ``ghcr.io/rrenomeron/bluefin-dx-tr:lts``
+  - LTS: ``ghcr.io/rrenomeron/bluefin-dx-tr:lts`` and ``ghcr.io/rrenomeron/bluefin-dx-tr:lts-hwe`` (LTS with HWE kernel)
   - Stable: ``ghcr.io/rrenomeron/bluefin-dx-tr:stable``
-  - GTS: ``ghcr.io/rrenomeron/bluefin-dx-tr:gts``
 - [Bazzite](https://bazzite.gg) DX (Stable branch only): ``ghcr.io/rrenomeron/bazzite-tr``
 - [Fedora Silverblue](https://fedoraproject.org/atomic-desktops/silverblue/) (43 only): ``ghcr.io/rrenomeron/silverblue-tr``
 
@@ -60,9 +59,10 @@ Non x86-64 architectures are not supported.
 - Docker CE installed with rootful Docker disabled
 - Dash-to-Dock enabled by default, skipping Overview on login
 - Appindicators enabled by default
-- Logo Menu enabled by default (like Bluefin)
+- Logo Menu enabled by default, like Bluefin (Silverblue only)
 - Windows have minimize and maximize buttons (like Ubuntu and Bluefin)
 - Additional packages (e.g. Firewall GUI, rclone/restic, Universal Blue enhancements)
+- ``ujust`` scripts from Universal Blue images
 - ``<CTRL><ALT>t`` opens a terminal
     
 ## Server Image Features
