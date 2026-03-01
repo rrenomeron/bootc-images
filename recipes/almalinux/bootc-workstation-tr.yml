@@ -42,6 +42,12 @@ modules:
   # so we can't use the Logo Menu with it
   - from-file: features/default-extensions-disable-logo-menu.yml
 
+  # The Univeral Blue based images all have just
+  - type: dnf
+    install:
+      packages:
+      - just
+
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
 
