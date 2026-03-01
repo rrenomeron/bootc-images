@@ -42,11 +42,19 @@ modules:
 # VSCode gets installed by itself to work around EL10 crypto issues
 - from-file: features/vscode.yml      
   
-# Bluefin moved all of their custom packages to an OCI container
+# Bluefin moved all of their custom packages to an OCI container 
+# We copy the "shared" part of Bluefin's common stuff, since
+# it's shared by all the ublue-adjacent stuff
 - type: copy
   from: ghcr.io/projectbluefin/common:latest
   src: /system_files/shared 
   dest: /
+
+# Copy stuff needed to complete the ujust setup
+- type: files
+  files:
+    - source: just
+      destination: /
 
 # Use uupd for updates
 - type: systemd
