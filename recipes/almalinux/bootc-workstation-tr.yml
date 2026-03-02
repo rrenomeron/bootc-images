@@ -27,7 +27,7 @@ modules:
   - type: script
     scripts:
       - patch-xdg-icon-resource.sh
-  - from-file: features/default-flatpaks.yml
+  - from-file: features/flatpak-preinstall.yml
   - from-file: features/cockpit.yml
   - from-file: features/chrome.yml
   - from-file: features/virtualization.yml
