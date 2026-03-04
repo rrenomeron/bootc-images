@@ -4,5 +4,5 @@
 modules:
   - from-file: features/tr-system-files-and-pki-trust.yml
   - from-file: features/chrome.yml
-  - from-file: features/default-flatpaks.yml
+  - from-file: features/flatpak-preinstall.yml
   - from-file: features/tr-ui-changes.yml

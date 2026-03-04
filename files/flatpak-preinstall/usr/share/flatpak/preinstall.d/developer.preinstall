@@ -14,5 +14,5 @@ Branch=stable
 [Flatpak Preinstall io.podman_desktop.PodmanDesktop]
 Branch=stable
 
-[Flatpak Presintall dev.bragefuglseth.Keypunch]
+[Flatpak Preinstall dev.bragefuglseth.Keypunch]
 Branch=stable
