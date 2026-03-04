@@ -3,7 +3,3 @@ modules:
   - type: script
     snippets:
       - "systemctl enable disable-mcelog-on-virtual-amd.service"
-  - type: dnf 
-    install:
-      packages:
-        - patch      
