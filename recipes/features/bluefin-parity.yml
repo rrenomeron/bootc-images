@@ -35,6 +35,7 @@ modules:
       - clinfo
       - uupd
       - glow
+      - gum
 
 # Needed because ublue-motd runs on our non-ublue images
 - from-file: features/minimal-ublue-motd.yml

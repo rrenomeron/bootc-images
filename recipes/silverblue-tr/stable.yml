@@ -35,5 +35,14 @@ modules:
     remove:
       packages:
         - gnome-software
+    replace:
+      # This allows us to use the version of Flatpak that can do preinstalls
+      # Remove when we move to Fedora 44
+      - from-repo: copr:copr.fedorainfracloud.org:ublue-os:flatpak-test
+        packages:
+        - flatpak
+        - flatpak-libs
+        - flatpak-session-helper
+
 
   - from-file: features/bluefin-parity.yml        
