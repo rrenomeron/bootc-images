@@ -36,6 +36,7 @@ modules:
       - uupd
       - glow
       - gum
+      - pcsc-lite
 
 # Needed because ublue-motd runs on our non-ublue images
 - from-file: features/minimal-ublue-motd.yml
