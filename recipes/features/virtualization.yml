@@ -7,7 +7,18 @@ modules:
     install:
       packages:        
         - libvirt
+        - libvirt-nss
         - ublue-os-libvirt-workarounds
         - cockpit-machines
+
+  - type: files
+    files:
+      - source: virtualization
+      - dest: /
+
+  - type: systemd
+    system:
+      enable: 
+      - bluefin-dx-groups.service 
  
 
