@@ -14,7 +14,7 @@ modules:
   - type: files
     files:
       - source: virtualization
-      - dest: /
+      - destination: /
 
   - type: systemd
     system:
