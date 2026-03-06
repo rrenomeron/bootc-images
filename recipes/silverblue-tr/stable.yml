@@ -23,6 +23,7 @@ modules:
       copr:
         - ublue-os/staging
         - ublue-os/packages
+        - ublue-os/flatpak-test
     install:
       install-weak-deps: false
       packages:
@@ -35,6 +36,11 @@ modules:
     remove:
       packages:
         - gnome-software
+
+  # - type: dnf
+  #   repos:
+  #     copr:
+  #     - ublue-os/flatpak-test
     replace:
       # This allows us to use the version of Flatpak that can do preinstalls
       # Remove when we move to Fedora 44
