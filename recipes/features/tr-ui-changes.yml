@@ -4,7 +4,6 @@ modules:
   scripts:
     - install-system76-wallpaper.sh
     - install-framework-wallpaper.sh
-    - install-ubuntu-wallpapers.sh
 
 - type: fonts
   fonts:

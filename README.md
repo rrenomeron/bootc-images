@@ -35,7 +35,6 @@ Non x86-64 architectures are not supported.
 - Dark styles enabled by default
 - [System76 wallpaper collection](https://system76.com/merch/desktop-wallpapers)
 - [Framework 12](https://frame.work/laptop12) wallpapers
-- Historical Ubuntu wallpapers, mostly from the LTS versions
 - [Intel One Mono](https://www.intel.com/content/www/us/en/company-overview/one-monospace-font.html) set as
   default monospace font
 
