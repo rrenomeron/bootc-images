@@ -4,7 +4,7 @@ modules:
 - type: gnome-extensions
   install:
   - AppIndicator and KStatusNotifierItem Support
-  - Dash to Dock
+  # - Dash to Dock
   - Blur my Shell 
   - Logo Menu 
 
@@ -21,6 +21,8 @@ modules:
       - rclone
       - restic
       - gnome-disk-utility
+      # Remove when v104 of this extension is released
+      - gnome-shell-extension-dash-to-dock
       - wl-clipboard
       - nss-mdns
       - powertop
