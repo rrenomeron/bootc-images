@@ -51,4 +51,19 @@ modules:
         - flatpak-session-helper
 
 
-  - from-file: features/bluefin-parity.yml        
+  - from-file: features/bluefin-parity.yml
+  # These are extra packages that Fedora needs to make libvirt work
+  # properly
+  - type: dnf 
+    install: 
+      packages:
+        - qemu 
+        - qemu-char-spice 
+        - qemu-device-display-virtio-gpu 
+        - qemu-device-display-virtio-vga 
+        - qemu-device-usb-redirect 
+        - qemu-img 
+        - qemu-kvm 
+        - qemu-system-x86-core 
+        - qemu-user-binfmt 
+        - qemu-user-static         

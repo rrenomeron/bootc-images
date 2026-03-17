@@ -10,6 +10,9 @@ modules:
         - libvirt-nss
         - ublue-os-libvirt-workarounds
         - cockpit-machines
+        - virt-manager
+        - virt-v2v
+        - virt-viewer
 
   - type: files
     files:
