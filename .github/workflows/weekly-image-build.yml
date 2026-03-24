@@ -32,13 +32,8 @@ jobs:
       fail-fast: false # stop GH from cancelling all matrix builds if one fails
       matrix:
         recipe:
-          - almalinux/bootc-server-tr.yml
-          - almalinux/bootc-workstation-tr.yml
-          - bazzite-tr/stable.yml
-          - bluefin-dx-tr/lts.yml
-          - bluefin-dx-tr/lts-hwe.yml
+          - bazzite-tr/stable.yml          
           - bluefin-dx-tr/stable.yml
-          - silverblue-tr/stable.yml
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image
