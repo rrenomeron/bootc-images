@@ -7,14 +7,10 @@ These are
 
 ## Available Images
 
-- [AlmaLinux](https://almalinux.org) 10.1
-  - Desktop: ``ghcr.io/rrenomeron/almalinux-bootc-workstation-tr``
-  - Server: ``ghcr.io/rrenomeron/almalinux-bootc-server-tr``
-- [Bluefin](https://projectbluefin.io/) DX (Developer Experience)
-  - LTS: ``ghcr.io/rrenomeron/bluefin-dx-tr:lts`` and ``ghcr.io/rrenomeron/bluefin-dx-tr:lts-hwe`` (LTS with HWE kernel)
-  - Stable: ``ghcr.io/rrenomeron/bluefin-dx-tr:stable``
+- [Bluefin](https://projectbluefin.io/) DX (Developer Experience): ``ghcr.io/rrenomeron/bluefin-dx-tr:stable``
 - [Bazzite](https://bazzite.gg) DX (Stable branch only): ``ghcr.io/rrenomeron/bazzite-tr``
-- [Fedora Silverblue](https://fedoraproject.org/atomic-desktops/silverblue/) (43 only): ``ghcr.io/rrenomeron/silverblue-tr``
+
+There are additional recipes for images that are no longer built, but remain in the repo for historical interest.
 
 Non x86-64 architectures are not supported.
 
@@ -47,28 +43,10 @@ Non x86-64 architectures are not supported.
 
 ### Bazzite Changes & Overrides:
 
-- GNOME desktop with simliar UI to the other images
+- GNOME desktop with Bluefin mods
 - Developer mode enabled (i.e. based on ``bazzite-dx-gnome``)
 - Steam does not autostart on login
 
-### Silverblue/AlmaLinux Changes & Overrides:
-
-- Visual Studio Code RPM installed
-- Libvirt/Virt-Manager RPMs installed
-- Docker CE installed with rootful Docker disabled
-- Dash-to-Dock enabled by default, skipping Overview on login
-- Appindicators enabled by default
-- Logo Menu enabled by default, like Bluefin (Silverblue only)
-- Windows have minimize and maximize buttons (like Ubuntu and Bluefin)
-- Additional packages (e.g. Firewall GUI, rclone/restic, Universal Blue enhancements)
-- ``ujust`` scripts from Universal Blue images
-- ``<CTRL><ALT>t`` opens a terminal
-    
-## Server Image Features
-
-- All the advantages of atomic updates
-- Docker (Rootful Docker disabled by default)
-- Cockpit
 
 ## Installation
 
@@ -92,12 +70,3 @@ For the Fedora-based images (Silverblue, Bluefin non-LTS, Bazzite), you can do t
    ```
    systemctl reboot
    ```
-
-## TODO:
-
-- Create installer ISOs using similar methods as Bluefin and/or Bazzite
-- Refactor recipies for further efficiency
-- Push things like wallpapers (and maybe fonts) to an OCI layer, like
-  [Bluefin does with their "common" image](https://github.com/projectbluefin/common)
-- Figure out how to use renovate to start builds when base images change
-- Only build images that are affected by pushed changes
