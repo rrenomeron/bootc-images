@@ -3,7 +3,7 @@ modules:
 - type: script
   scripts:
     - install-system76-wallpaper.sh
-    - install-framework-wallpaper.sh
+    # - install-framework-wallpaper.sh
 
 - type: fonts
   fonts:
